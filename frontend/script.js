@@ -1,21 +1,4 @@
-    // ── Datos simulados de la ontología (representativos) ──
-    /* const ontologyData = [
-      { nombre: "Cristo de la Concordia", clase: "Atractivo_Recreativo", tipo: "Mirador Religioso", gratuito: true, accesibilidad: true, horario: "09:00–18:00", tags: ["mirador","religioso","atractivo"] },
-      { nombre: "Parque Nacional Tunari", clase: "Atractivo_Natural", tipo: "Montaña / Parque", gratuito: false, accesibilidad: true, horario: "07:00–18:00", tags: ["naturaleza","senderismo","trekking"] },
-      { nombre: "Museo Arqueológico UMSS", clase: "Atractivo_Cultural_Histórico", tipo: "Museístico", gratuito: false, accesibilidad: true, horario: "09:00–17:30", tags: ["museo","historia","arqueología"] },
-      { nombre: "Catedral Metropolitana", clase: "Atractivo_Cultural_Histórico", tipo: "Arquitectura Religiosa", gratuito: true, accesibilidad: true, horario: "08:00–18:00", tags: ["iglesia","colonial","museo","histórico"] },
-      { nombre: "Silpancho", clase: "Producto_Alimenticio", tipo: "Comida típica", gratuito: null, accesibilidad: null, horario: null, tags: ["gastronomía","típico","plato"] },
-      { nombre: "Hotel Cochabamba", clase: "Hospedaje", tipo: "Hotel 5 Estrellas", gratuito: false, accesibilidad: true, horario: "24h", tags: ["hospedaje","hotel","lujo"] },
-      { nombre: "Laguna Alalay", clase: "Atractivo_Natural", tipo: "Laguna / Humedal", gratuito: true, accesibilidad: true, horario: "Todo el día", tags: ["naturaleza","laguna","aves"] },
-      { nombre: "Virgen de Urkupiña", clase: "Evento_Turístico", tipo: "Religioso / Folclórico", gratuito: true, accesibilidad: true, horario: "14–16 Agosto", tags: ["evento","festividad","religioso","folclore"] },
-      { nombre: "La Casa del Campo", clase: "Establecimiento_Gastronomico", tipo: "Restaurante Tradicional", gratuito: false, accesibilidad: true, horario: "11:00–23:00", tags: ["gastronomía","restaurante","típico"] },
-      { nombre: "Teleférico Turístico", clase: "Transporte", tipo: "Cable", gratuito: false, accesibilidad: true, horario: "10:00–19:00", tags: ["transporte","mirador","turístico"] },
-      { nombre: "Ruinas de Incallajta", clase: "Atractivo_Arqueológico", tipo: "Zona Arqueológica Inca", gratuito: false, accesibilidad: false, horario: "08:00–17:00", tags: ["arqueología","inca","historia","senderismo"] },
-      { nombre: "Pique Macho", clase: "Producto_Alimenticio", tipo: "Comida típica", gratuito: null, accesibilidad: null, horario: null, tags: ["gastronomía","típico","plato"] },
-      { nombre: "Palacio Portales", clase: "Atractivo_Cultural_Histórico", tipo: "Centro Cultural", gratuito: false, accesibilidad: true, horario: "09:00–18:00", tags: ["museo","histórico","patrimonio","guía"] },
-      { nombre: "FEXCO", clase: "Evento_Turístico", tipo: "Feria Comercial", gratuito: false, accesibilidad: true, horario: "25 Abr – 5 May", tags: ["evento","feria","comercial"] },
-    ]; */
- 
+const BASE_URL = "http://localhost:3000/api/search";
     // ── Traducciones ──
 const translations = {
   es: { search: "Buscar", placeholder: "Ej: museos gratuitos, hoteles, senderismo…", free: "Gratuito", notFree: "Con costo", accessible: "Accesible", schedule: "Horario", noResults: "Sin resultados para", try: "Intenta con otro término." },
@@ -95,7 +78,7 @@ async function doSearch() {
   resultsContainer.innerHTML = '<div class="loading">🔍 Buscando...</div>';
 
   try {
-    const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(q)}`);
+    const response = await fetch(`${BASE_URL}?q=${encodeURIComponent(q)}`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const data = await response.json();
