@@ -1,0 +1,4384 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Atractivo_Arqueológico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atractivo_Natural"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atractivo_Recreativo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atractivo_Turistico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entidad_Turistica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Evento_Turístico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gastronomía"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hospedaje"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Producto_Alimenticio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Servicio_Turistico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transporte"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estaCercaDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofreceEvento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofreceHospedaje"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seLlegaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#seRealizaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneAtractivo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneEstablecimiento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ubicadoEn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Accesibilidad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Actividades"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Capacidad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Costo_Aproximado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Costo_Entrada"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Cultura_Origen"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Descripcion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Disponible"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Epoca"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Es_Tipico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Estado_Conservacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Fecha_Fin"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Fecha_Inicio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Frecuencia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Grado_Dificultad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Gratuito"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Horario_Apertura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Horario_Atencion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Horario_Cierra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Horario_Especial"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Horario_Servicio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Incluye_Servicios"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Ingredientes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nombre"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Precio_Dia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Precio_Noche"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Requiere_Reserva"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Ruta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Servicios"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tiene_Descuento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Evento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Producto"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tipo_Transporte"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Ubicacion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Buffet_Hotel_Cochabamba"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Casona_Santiváñez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Casona_de_Mayorazgo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chicha_Cochabambina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chicharrón_Cochabambino"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Complejo_Arqueológico_de_Pocona"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Corani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Día_del_Peatón"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FEXCO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Garapiña"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Globos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gran_Hotel_Cochabamba"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Heroínas_de_la_Coronilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Americana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Aranjuez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Camino_Plaza"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Cochabamba"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Diplomat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Luxor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Pairumani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Regina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Tambo_Real"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Incachaca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jardín_Botánico_Martín_Cárdenas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#La_Angostura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lapping"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Martínez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mocochinchi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Museo_de_Historia_Natural"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pairumani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pan_de_Toco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pique_Macho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pukara_de_Tupuraya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Qollqas_de_Tarata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruinas_de_Pocona"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruinas_de_Tapacarí"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ruinas_de_Totora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Río_Rocha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Silpancho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sopa_de_Maní"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Teleférico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Templo_de_la_Merced"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Todos_Santos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trancapecho"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vestigios_Arqueológicos_de_Mizque"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atractivo_Natural"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atractivo_Turistico"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <Class IRI="#Gastronomía"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Evento_Turístico"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gastronomía"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hospedaje"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Producto_Alimenticio"/>
+        <Class IRI="#Gastronomía"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Servicio_Turistico"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transporte"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <Class IRI="#Atractivo_Natural"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <Class IRI="#Atractivo_Recreativo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <Class IRI="#Atractivo_Natural"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <Class IRI="#Atractivo_Recreativo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Natural"/>
+        <Class IRI="#Atractivo_Recreativo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Atractivo_Turistico"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <Class IRI="#Producto_Alimenticio"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Evento_Turístico"/>
+        <Class IRI="#Gastronomía"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Evento_Turístico"/>
+        <Class IRI="#Hospedaje"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Evento_Turístico"/>
+        <Class IRI="#Transporte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Gastronomía"/>
+        <Class IRI="#Hospedaje"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Gastronomía"/>
+        <Class IRI="#Transporte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Hospedaje"/>
+        <Class IRI="#Transporte"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Buffet_Hotel_Cochabamba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Casona_Santiváñez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Casona_de_Mayorazgo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Chicha_Cochabambina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Chicharrón_Cochabambino"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Complejo_Arqueológico_de_Pocona"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Corani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Día_del_Peatón"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#FEXCO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Garapiña"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Globos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Gran_Hotel_Cochabamba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Heroínas_de_la_Coronilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Americana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Aranjuez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Camino_Plaza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Cochabamba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Diplomat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Luxor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Pairumani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Regina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Tambo_Real"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Incachaca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Jardín_Botánico_Martín_Cárdenas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Lapping"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Martínez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Mocochinchi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Museo_de_Historia_Natural"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Pairumani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Pan_de_Toco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Pique_Macho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Pukara_de_Tupuraya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Qollqas_de_Tarata"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Ruinas_de_Pocona"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Ruinas_de_Tapacarí"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Ruinas_de_Totora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Río_Rocha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Natural"/>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Silpancho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Recreativo"/>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Sopa_de_Maní"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Teleférico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+        <NamedIndividual IRI="#Templo_de_la_Merced"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Producto_Alimenticio"/>
+        <NamedIndividual IRI="#Trancapecho"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transporte"/>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Atractivo_Arqueológico"/>
+        <NamedIndividual IRI="#Vestigios_Arqueológicos_de_Mizque"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Evento_Turístico"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <NamedIndividual IRI="#Teleférico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+        <NamedIndividual IRI="#Lapping"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+        <NamedIndividual IRI="#Silpancho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <NamedIndividual IRI="#FEXCO"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#Globos"/>
+        <NamedIndividual IRI="#Pique_Macho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+        <NamedIndividual IRI="#Lapping"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+        <NamedIndividual IRI="#Silpancho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <NamedIndividual IRI="#FEXCO"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <NamedIndividual IRI="#Sopa_de_Maní"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <NamedIndividual IRI="#Trancapecho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+        <NamedIndividual IRI="#Pique_Macho"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <NamedIndividual IRI="#Globos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+        <NamedIndividual IRI="#Chicharrón_Cochabambino"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneAtractivo"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneAtractivo"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneAtractivo"/>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+        <Literal>Pozas naturales de aguas medicinales que brotan de la montaña con una vista privilegiada del valle .</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+        <Literal>07:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+        <Literal>16:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+        <Literal>Aguas Termales de Liriuni</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Aguas_Termales_de_Liriuni"/>
+        <Literal>Quillacollo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+        <Literal>Áreas Verdes, Camping</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">180.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">120.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Alojamiento_Rural"/>
+        <Literal>Alojamiento Rural</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+        <Literal>Un extenso sendero de pinos antiguos que crean un microclima místico en uno de los pueblos más coloniales de Bolivia.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+        <Literal>06:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+        <Literal>18:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+        <Literal>Bosque de los pinos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Bosque_de_los_PInos"/>
+        <Literal>Totora</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Buffet_Hotel_Cochabamba"/>
+        <Literal>07:00 - 22:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Buffet_Hotel_Cochabamba"/>
+        <Literal>Piscina, Buffet internacional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Buffet_Hotel_Cochabamba"/>
+        <Literal>Restaurante de Lujo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Buffet_Hotel_Cochabamba"/>
+        <Literal>Recoleta</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">45</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">40.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+        <Literal>07:00 - 23:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+        <Literal>Terminal - Santa Cruz/La Paz</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Bus_Interdepartamental"/>
+        <Literal>Bus Interdepartamental</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">25.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+        <Literal>Fines de semana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+        <Literal>Circuito Histórico / Miradores</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Bus_Turístico_-City_Tour"/>
+        <Literal>Bus Turístico (City Tour)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Casona_Santiváñez"/>
+        <Literal>Colonial/Repub.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Casona_Santiváñez"/>
+        <Literal>Casona Santiváñez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Casona_Santiváñez"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Casona_Santiváñez"/>
+        <Literal>Arquitectura Civil</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Casona_de_Mayorazgo"/>
+        <Literal>Colonial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Casona_de_Mayorazgo"/>
+        <Literal>Casona de Mayorazgo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Casona_de_Mayorazgo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Casona_de_Mayorazgo"/>
+        <Literal>Arquitectura Civil</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <Literal>Colonial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <Literal>Alto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <Literal>Catedral Metropolitana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Catedral_Metropolitana"/>
+        <Literal>Arquitectura Religiosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+        <Literal>Formaciones geológicas estrechas donde el río serpentea entre paredes de roca, ideal para fotografía de aventura.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+        <Literal>06:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+        <Literal>18:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+        <Literal>Cañadón de la Angostura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Cañadón_de_la_Angostura"/>
+        <Literal>Carretera al Valle Alto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">20.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal>Centro &quot;Simón I. Patiño&quot;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal>Natural / Paisajístico / Ecológico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Centro_Simón_I._Patiño"/>
+        <Literal>Cercado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+        <Literal>Senderismo, fotografía</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+        <Literal>Cerro San Pedro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Cerro_San_Pedro"/>
+        <Literal>Cerro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+        <Literal>Caminata, turismo religioso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+        <Literal>Cerro de Cota</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Cerro_de_Cota"/>
+        <Literal>Cerro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Chicha_Cochabambina"/>
+        <Literal>Bebida Tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Chicha_Cochabambina"/>
+        <Literal>Maíz fermentado, agua</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Chicha_Cochabambina"/>
+        <Literal>Chicha Cochabambina</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Chicharrón_Cochabambino"/>
+        <Literal>Criolla / Tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Chicharrón_Cochabambino"/>
+        <Literal>Carne de cerdo, mote de maíz, papa, llajua</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Chicharrón_Cochabambino"/>
+        <Literal>Chicharrón Cochabambino</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+        <Literal>10:00 - 00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+        <Literal>Cine Center Cochabamba</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Cine_Center_Cochabamba"/>
+        <Literal>Entretenimiento / Cine</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Complejo_Arqueológico_de_Pocona"/>
+        <Literal>Inca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Complejo_Arqueológico_de_Pocona"/>
+        <Literal>Regular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Complejo_Arqueológico_de_Pocona"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Complejo_Arqueológico_de_Pocona"/>
+        <Literal>Complejo Arqueológico de Pocona</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+        <Literal>Colonial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+        <Literal>Medio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+        <Literal>Convento Santa Teresa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Convento_Santa_Teresa"/>
+        <Literal>Museo Religioso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal>Corani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal>Natural/Paisajistico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Corani"/>
+        <Literal>Colomi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+        <Literal>Sábado Tentación</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+        <Literal>Sábado Tentación</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+        <Literal>Carnaval</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Corso_de_Corsos"/>
+        <Literal>El Prado / Heroínas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <Literal>09:00 - 18:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <Literal>Alto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <Literal>Cristo de la Concordia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Cristo_de_la_Concordia"/>
+        <Literal>Mirador Religioso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+        <Literal>18:00 - 00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+        <Literal>Delivery, Bebidas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+        <Literal>Parrilada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Don_de_Fer"/>
+        <Literal>Av. América</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Día_del_Peatón"/>
+        <Literal>1er Domingo Sept.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Día_del_Peatón"/>
+        <Literal>1er Domingo Sept.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Día_del_Peatón"/>
+        <Literal>Medioambiental</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Día_del_Peatón"/>
+        <Literal>Toda la ciudad</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+        <Literal>11:00 - 15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+        <Literal>Atencion Rapida</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+        <Literal>Especialidad (Silpancho)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#El_Palacio_del_Silpancho"/>
+        <Literal>Calle Baptista</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+        <Literal>28 de Octubre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+        <Literal>28 de Octubre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+        <Literal>Folclórico / Estudiantil</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Entrada_Universitaria"/>
+        <Literal>Centro de la ciudad</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#FEXCO"/>
+        <Literal>05 de Mayo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#FEXCO"/>
+        <Literal>25 de Abril</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#FEXCO"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#FEXCO"/>
+        <Literal>Feria Comercial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#FEXCO"/>
+        <Literal>Recinto Ferial Alalay</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+        <Literal>Domingo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+        <Literal>Lunes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+        <Literal>Diario</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+        <Literal>Feria Artesanal La Cancha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+        <Literal>Feria Artesanal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Feria_Artesanal_La_Cancha"/>
+        <Literal>Mercado La Cancha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+        <Literal>21 de Septiembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+        <Literal>21 de Septiembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+        <Literal>Gastronómico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Feria_de_la_Ensalada"/>
+        <Literal>Parque de la Familia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+        <Literal>15 de Junio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+        <Literal>15 de Junio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+        <Literal>Gastronómico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Feria_del_Pique_Macho"/>
+        <Literal>Plaza de las Banderas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+        <Literal>03 de Mayo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+        <Literal>01 de Mayo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+        <Literal>Religioso / Agrícola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Festividad_Santa_Vera_Cruz"/>
+        <Literal>Km 7 Av. Petrolera</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Garapiña"/>
+        <Literal>Bebida Tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Garapiña"/>
+        <Literal>Chicha, helado de canela, coco rallado, frutillas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Garapiña"/>
+        <Literal>Garapiña</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Globos"/>
+        <Literal>08:00 - 21:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Globos"/>
+        <Literal>Aire acondicionado, Juegos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Globos"/>
+        <Literal>Pastelería / Heladería</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Globos"/>
+        <Literal>El Prado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Gran_Hotel_Cochabamba"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Gran_Hotel_Cochabamba"/>
+        <Literal>Gran Hotel Cochabamba</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Gran_Hotel_Cochabamba"/>
+        <Literal>Plaza Ubaldo Anze</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Heroínas_de_la_Coronilla"/>
+        <Literal>Independencia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Heroínas_de_la_Coronilla"/>
+        <Literal>Heroínas de la Coronilla</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Heroínas_de_la_Coronilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Heroínas_de_la_Coronilla"/>
+        <Literal>Monumento Histórico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+        <Literal>Spa, Jacuzzi, Parqueo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">550.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">460.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_4_Estrellas"/>
+        <Literal>Hotel 4 Estrellas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+        <Literal>Piscina, Gym, Wifi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">750.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">600.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_5_Estrellas"/>
+        <Literal>Hotel 5 Estrellas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Americana"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Americana"/>
+        <Literal>Hotel Americana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Americana"/>
+        <Literal>Av. Heroinas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Aranjuez"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Aranjuez"/>
+        <Literal>Hotel Aranjuez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Aranjuez"/>
+        <Literal>Barrio Recoleta</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+        <Literal>Jardines, Desayuno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">580.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">480.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Boutique"/>
+        <Literal>Hotel Boutique</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+        <Literal>Baño Privado, Wifi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">200.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">150.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Básico"/>
+        <Literal>Hotel Básico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Camino_Plaza"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Camino_Plaza"/>
+        <Literal>Hotel Camino Plaza</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Camino_Plaza"/>
+        <Literal>Av. Oquendo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Cochabamba"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Cochabamba"/>
+        <Literal>Hotel Cochabamba</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Cochabamba"/>
+        <Literal>Av. Pando N° 1271</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Diplomat"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Diplomat"/>
+        <Literal>Hotel Diplomat</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Diplomat"/>
+        <Literal>Av. Ballivian</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+        <Literal>Servicios Básicos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">180.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">140.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Económico"/>
+        <Literal>Hotel Económico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+        <Literal>Sala de Juntas, Wifi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">550.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">450.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo"/>
+        <Literal>Hotel Ejecutivo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+        <Literal>Traslado Aeropuerto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">420.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">350.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Ejecutivo_5_estrellas"/>
+        <Literal>Hotel Ejecutivo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Luxor"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Luxor"/>
+        <Literal>Hotel Luxor</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Luxor"/>
+        <Literal>Zona Norte</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Pairumani"/>
+        <Literal>07:00 - 22:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Pairumani"/>
+        <Literal>Hotel Pairumani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Pairumani"/>
+        <Literal>Zona Pairumani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Regina"/>
+        <Literal>6:00 - 23:59</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Regina"/>
+        <Literal>Hotel Regina</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Regina"/>
+        <Literal>Calle España</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Hotel_Tambo_Real"/>
+        <Literal>24 horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Hotel_Tambo_Real"/>
+        <Literal>Hotel Tambo Real</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Hotel_Tambo_Real"/>
+        <Literal>Zona Central</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+        <Literal>TV Cable, Ventilador</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">280.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">220.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_Turístico"/>
+        <Literal>Hotel Turístico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Disponible"/>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+        <Literal>Sauna, Desayuno Buffet</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Dia"/>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">700.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Precio_Noche"/>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">550.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <NamedIndividual IRI="#Hotel_de_Lujo"/>
+        <Literal>Hotel de Lujo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal>Incachaca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal>Natural / Aventura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Incachaca"/>
+        <Literal>Colomi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Jardín_Botánico_Martín_Cárdenas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Jardín_Botánico_Martín_Cárdenas"/>
+        <Literal>09:00 - 17:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Jardín_Botánico_Martín_Cárdenas"/>
+        <Literal>Jardín Botánico Martín Cárdenas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Jardín_Botánico_Martín_Cárdenas"/>
+        <Literal>Naturaleza/Paseo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <Literal>Paseo en bote, pesca, gastronomía</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <Literal>La Angostura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#La_Angostura"/>
+        <Literal>Lago / Represa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+        <Literal>11:00 - 23:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+        <Literal>Música en vivo, Parqueo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+        <Literal>Restaurante Tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#La_Casa_del_Campo"/>
+        <Literal>Pasaje Boulevard</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal>Ciclismo, caminata, observación de aves</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal>Medio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal>Laguna Alalay</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Laguna_Alalay"/>
+        <Literal>Laguna / Humedal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal>Laguna Angostura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal>Natural / Recreativo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Laguna_Angostura"/>
+        <Literal>Valle Alto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+        <Literal>Pesca, paseo, fotografía</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+        <Literal>Laguna Corani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Laguna_Corani"/>
+        <Literal>Laguna</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Lapping"/>
+        <Literal>Criolla / Asado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Lapping"/>
+        <Literal>Pecho de res asado, habas tiernas, choclo, papa, ensalada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Lapping"/>
+        <Literal>Lapping</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Martínez"/>
+        <Literal>08:30 - 13:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Martínez"/>
+        <Literal>Consumo en el lugar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Martínez"/>
+        <Literal>Salteñería</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Martínez"/>
+        <Literal>Varias sucursales</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <Literal>07:00 - 15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <Literal>Precios económicos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <Literal>Mercado Popular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Mercado_25_de_Mayo"/>
+        <Literal>Calle 25 de Mayo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+        <Literal>06:00 - 21:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+        <Literal>Zona Sur - Cruce Taquiña</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Micro_Línea_H"/>
+        <Literal>Micro (Línea H)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+        <Literal>05:30 - 22:30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+        <Literal>Plaza Principal - Sacaba</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Minibús_-_Línea_101"/>
+        <Literal>Minibús (Línea 101)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+        <Literal>11:30 - 22:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+        <Literal>Terraza, Wi-Fi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+        <Literal>Restaurante Familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Miraflores_Lugar_de_Piques"/>
+        <Literal>Av. Tarija</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Mocochinchi"/>
+        <Literal>Bebida Tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Mocochinchi"/>
+        <Literal>Durazno deshidratado, agua, canela, clavo de olor, azúcar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Mocochinchi"/>
+        <Literal>Mocochinchi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+        <Literal>7:00 - 19:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+        <Literal>Centro - Zonas Periféricas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Moto_Taxi"/>
+        <Literal>Moto Taxi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+        <Literal>Formación rocosa puntiaguda que domina el paisaje del valle, accesible tras una caminata de intensidad media.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+        <Literal>05:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+        <Literal>17:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+        <Literal>Muela del diablo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Muela_del_Diablo"/>
+        <Literal>Tiquipaya</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <Literal>Prehispánica/Colonial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <Literal>Medio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <Literal>Museo Arqueológico UMSS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Museo_Arqueológico_UMSS"/>
+        <Literal>Museistico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+        <Literal>Contiene piezas únicas de las culturas prehispánicas del valle, incluyendo textiles y cerámicas de la cultura Omereque.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+        <Literal>09:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+        <Literal>17:30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+        <Literal>Museo_Arqueológico_de_Mizque</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Museo_Arqueólogico_de_Mizque"/>
+        <Literal>Mizque</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">15.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal>Museo Convento Santa Teresa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal>Cultural / 
+Religioso / 
+Mirador</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Museo_convento_Santa_Teresa"/>
+        <Literal>Cercado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Museo_de_Historia_Natural"/>
+        <Literal>Republicana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Museo_de_Historia_Natural"/>
+        <Literal>Museo de Historia Natural</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Museo_de_Historia_Natural"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Museo_de_Historia_Natural"/>
+        <Literal>Científico/Cultural</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+        <Literal>06 de Enero</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+        <Literal>01 de Diciembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+        <Literal>Festivo / Luce</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Navidad_en_el_Prado"/>
+        <Literal>Paseo del Prado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Pairumani"/>
+        <Literal>Camping, caminata, picnic</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Pairumani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Pairumani"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Pairumani"/>
+        <Literal>Pairumani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Pairumani"/>
+        <Literal>Valle / Parque ecológico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <Literal>Republicana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <Literal>Alto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <Literal>Palacio Portales</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Palacio_Portales"/>
+        <Literal>Arquitectónico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Pan_de_Toco"/>
+        <Literal>Panadería Tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Pan_de_Toco"/>
+        <Literal>Harina de trigo, manteca, levadura, sal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Pan_de_Toco"/>
+        <Literal>Pan de Toco</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+        <Literal>Parque paleontológico que exhibe huellas de dinosaurios sobre una pared rocosa vertical, considerado uno de los registros más importantes de Bolivia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+        <Literal>09:30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+        <Literal>17:30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+        <Literal>Parque Cretácico de Sacaba</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Parque_Cretácico_de_Sacaba"/>
+        <Literal>Sacaba</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+        <Literal>Espeleología, trekking, turismo científico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+        <Literal>Parque Ecoturístico Toro Toro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Parque_Ecoturístico_Toro_Toro"/>
+        <Literal>Parque / Formación geológica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+        <Literal>09:00 - 18:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+        <Literal>Parque Kanata</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Parque_Kanata"/>
+        <Literal>Recreación Familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+        <Literal>fin de semana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+        <Literal>Parque Mariscal Santa Cruz</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Parque_Mariscal_Santa_Cruz"/>
+        <Literal>Acuático / Deportivo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">30.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal>Parque Nacional Torotoro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal>Natural / 
+Paleontológico 
+/ Aventura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Parque_Nacional_Torotoro"/>
+        <Literal>ToroToro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal>Senderismo, trekking, camping</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal>Medio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal>Parque Nacional Tunari</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Parque_Nacional_Tunari"/>
+        <Literal>Montaña / Parque</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+        <Literal>Martes a Domingo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+        <Literal>Parque de Educación Vial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Parque_de_Educación_Vial"/>
+        <Literal>Infantil / Educativo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Accesibilidad"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal>Parque de la familia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal>Recreativo / Urbano</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Parque_de_la_familia"/>
+        <Literal>Cercado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <Literal>24 Horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <Literal>Paseo del Prado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Paseo_del_Prado"/>
+        <Literal>Urbano / Caminata</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+        <Literal>12:00 - 16:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+        <Literal>Comida a leña</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+        <Literal>Picantería Popular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Picantería_Doña_Rosa"/>
+        <Literal>Zona Muyurina</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Pique_Macho"/>
+        <Literal>Criolla / Típica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Pique_Macho"/>
+        <Literal>Carne de res, salchichas, papas fritas, cebolla, locoto, huevo duro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Pique_Macho"/>
+        <Literal>Pique Macho</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+        <Literal>Formaciones naturales de agua cristalina y caídas de agua en las faldas de la cordillera del Tunari.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+        <Literal>07:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+        <Literal>16:30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+        <Literal>Pozas de Chilimarca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Pozas_de_chilimarca"/>
+        <Literal>Tiquipaya</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Pukara_de_Tupuraya"/>
+        <Literal>Prehispánica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Pukara_de_Tupuraya"/>
+        <Literal>Regular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Pukara_de_Tupuraya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Pukara_de_Tupuraya"/>
+        <Literal>Pukara de Tupuraya</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+        <Literal>Inca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+        <Literal>Bueno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Qollqas_de_Cotapachi_Quillacollo"/>
+        <Literal>Qollqas de Cotapachi (Quillacollo)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Qollqas_de_Tarata"/>
+        <Literal>Inca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Qollqas_de_Tarata"/>
+        <Literal>Bueno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Qollqas_de_Tarata"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Qollqas_de_Tarata"/>
+        <Literal>Qollqas de Tarata</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">15.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+        <Literal>24 Horas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+        <Literal>Puerta a Puerta (Variable)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Radio_Taxi"/>
+        <Literal>Radio Taxi (App)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+        <Literal>11:30 - 15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Servicios"/>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+        <Literal>Salón de eventos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+        <Literal>Comida Nacional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Restaurante_Tunari"/>
+        <Literal>Calle Ballivián</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <Literal>Inca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <Literal>Bueno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <Literal>Bajo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <Literal>Ruinas de Incallajta</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Ruinas_de_Incallajta"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Ruinas_de_Pocona"/>
+        <Literal>Inca/preincaico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Ruinas_de_Pocona"/>
+        <Literal>Regular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Ruinas_de_Pocona"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Ruinas_de_Pocona"/>
+        <Literal>Ruinas de Pocona</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Ruinas_de_Tapacarí"/>
+        <Literal>Preincaico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Ruinas_de_Tapacarí"/>
+        <Literal>Regular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Ruinas_de_Tapacarí"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Ruinas_de_Tapacarí"/>
+        <Literal>Ruinas de Tapacarí</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Ruinas_de_Totora"/>
+        <Literal>Prehispánica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Ruinas_de_Totora"/>
+        <Literal>Regular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Ruinas_de_Totora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Ruinas_de_Totora"/>
+        <Literal>Ruinas de Totora</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Actividades"/>
+        <NamedIndividual IRI="#Río_Rocha"/>
+        <Literal>Caminata, observación</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <NamedIndividual IRI="#Río_Rocha"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Río_Rocha"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Río_Rocha"/>
+        <Literal>Río Rocha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <NamedIndividual IRI="#Río_Rocha"/>
+        <Literal>Río</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+        <Literal>Iglesia colonial conocida como &quot;La Catedral del Pan&quot;, famosa por su arquitectura y los hornos de pan artesanales cercanos.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+        <Literal>09:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+        <Literal>18:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+        <Literal>San Pedro de Arani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#San_Pedro_de_Arani"/>
+        <Literal>Arani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+        <Literal>Una ruta de senderismo poco señalizada que atraviesa bosques de queñuas (árboles nativos) en las alturas de la ciudad.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+        <Literal>06:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+        <Literal>17:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+        <Literal>Sendero de los Jichis</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Sendero_de_los_Jichis"/>
+        <Literal>Parque Tunari</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Descripcion"/>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+        <Literal>Serranía rocosa ubicada en Quillacollo con senderos de caminata y vistas panorámicas del valle cochabambino</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+        <Literal>08:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+        <Literal>17:30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Serrania_e_Cota"/>
+        <Literal>Quillacollo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Silpancho"/>
+        <Literal>Criolla / Típica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Silpancho"/>
+        <Literal>Arroz, papa, carne de res apanada, huevo, sarsa (tomate y cebolla)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Silpancho"/>
+        <Literal>Silpancho</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Especial"/>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+        <Literal>08:00 - 21:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+        <Literal>Skatepark Ollantay</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <NamedIndividual IRI="#Skatepark_Ollantay"/>
+        <Literal>Deportivo / Juvenil</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Sopa_de_Maní"/>
+        <Literal>Criolla / Sopa tradicional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Sopa_de_Maní"/>
+        <Literal>Maní licuado, carne de res o pollo, fideo macarrón, papa, orégano</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Sopa_de_Maní"/>
+        <Literal>Sopa de maní</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+        <Literal>05:00 - 22:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+        <Literal>Av. Blanco Galindo - Centro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Taxi_Trufi_Línea_3"/>
+        <Literal>Taxi Trufi (Línea 3)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+        <Literal>Colonial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+        <Literal>Bajo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+        <Literal>Teatro Achá</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Teatro_Achá"/>
+        <Literal>Edificación Civil</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Teleférico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Teleférico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Teleférico"/>
+        <Literal>10:00 - 19:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Teleférico"/>
+        <Literal>Parque de la Familia - Cristo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Teleférico"/>
+        <Literal>Teleférico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Epoca"/>
+        <NamedIndividual IRI="#Templo_de_la_Merced"/>
+        <Literal>Colonial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Templo_de_la_Merced"/>
+        <Literal>Templo de la Merced</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <NamedIndividual IRI="#Templo_de_la_Merced"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <NamedIndividual IRI="#Templo_de_la_Merced"/>
+        <Literal>Arquitectura Religiosa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+        <Literal>02 de Noviembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+        <Literal>01 de Noviembre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+        <Literal>Tradicional / Religioso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Todos_Santos"/>
+        <Literal>Cementerios locales</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Es_Tipico"/>
+        <NamedIndividual IRI="#Trancapecho"/>
+        <Literal>Comida Rápida / Típica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ingredientes"/>
+        <NamedIndividual IRI="#Trancapecho"/>
+        <Literal>Pan de batalla, carne apanada, arroz, papa, huevo, sarsa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <NamedIndividual IRI="#Trancapecho"/>
+        <Literal>Trancapecho</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">30.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+        <Literal>Según vuelos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+        <Literal>Jorge Wilstermann - Hoteles</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Transfer_Aeropuerto"/>
+        <Literal>Transfer Aeropuerto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacidad"/>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">200</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">3.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+        <Literal>06:30 - 20:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ruta"/>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+        <Literal>Estación Central - Quillacollo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <NamedIndividual IRI="#Tren_Metropolitano"/>
+        <Literal>Tren Metropolitano</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <NamedIndividual IRI="#Vestigios_Arqueológicos_de_Mizque"/>
+        <Literal>Prehispánica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <NamedIndividual IRI="#Vestigios_Arqueológicos_de_Mizque"/>
+        <Literal>Regular</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Gratuito"/>
+        <NamedIndividual IRI="#Vestigios_Arqueológicos_de_Mizque"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nombre"/>
+        <NamedIndividual IRI="#Vestigios_Arqueológicos_de_Mizque"/>
+        <Literal>Vestigios Arqueológicos de Mizque</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+        <Literal>16 de Agosto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+        <Literal>14 de Agosto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Frecuencia"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+        <Literal>Anual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+        <Literal>Religioso / Folclórico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Ubicacion"/>
+        <NamedIndividual IRI="#Virgen_de_Urkupiña"/>
+        <Literal>Quillacollo</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofreceHospedaje"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <Class IRI="#Evento_Turístico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneAtractivo"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneEstablecimiento"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ubicadoEn"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estaCercaDe"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofreceEvento"/>
+        <Class IRI="#Evento_Turístico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofreceGastronomia"/>
+        <Class IRI="#Producto_Alimenticio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofreceHospedaje"/>
+        <Class IRI="#Hospedaje"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seLlegaPor"/>
+        <Class IRI="#Transporte"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#seRealizaEn"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneAtractivo"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneEstablecimiento"/>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ubicadoEn"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Accesibilidad"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Actividades"/>
+        <Class IRI="#Atractivo_Natural"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Capacidad"/>
+        <Class IRI="#Transporte"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <Class IRI="#Transporte"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <Class IRI="#Atractivo_Arqueológico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Descripcion"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Disponible"/>
+        <Class IRI="#Hospedaje"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Epoca"/>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Es_Tipico"/>
+        <Class IRI="#Producto_Alimenticio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <Class IRI="#Atractivo_Arqueológico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <Class IRI="#Evento_Turístico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <Class IRI="#Evento_Turístico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Frecuencia"/>
+        <Class IRI="#Evento_Turístico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <Class IRI="#Atractivo_Natural"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Gratuito"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <Class IRI="#Servicio_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Horario_Especial"/>
+        <Class IRI="#Atractivo_Recreativo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <Class IRI="#Transporte"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <Class IRI="#Hospedaje"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Ingredientes"/>
+        <Class IRI="#Producto_Alimenticio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nombre"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Precio_Dia"/>
+        <Class IRI="#Hospedaje"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Precio_Noche"/>
+        <Class IRI="#Hospedaje"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Ruta"/>
+        <Class IRI="#Transporte"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Servicios"/>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <Class IRI="#Atractivo_Turistico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <Class IRI="#Atractivo_Natural"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <Class IRI="#Establecimiento_Gastronomico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <Class IRI="#Evento_Turístico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <Class IRI="#Hospedaje"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <Class IRI="#Atractivo_Cultural_Histórico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <Class IRI="#Producto_Alimenticio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <Class IRI="#Atractivo_Recreativo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <Class IRI="#Transporte"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Ubicacion"/>
+        <Class IRI="#Entidad_Turistica"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Accesibilidad"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Actividades"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Capacidad"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Costo_Aproximado"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Costo_Entrada"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Cultura_Origen"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Descripcion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Disponible"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Epoca"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Es_Tipico"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Estado_Conservacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Fecha_Fin"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Fecha_Inicio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Frecuencia"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Grado_Dificultad"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Gratuito"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Horario_Apertura"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Horario_Atencion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Horario_Cierra"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Horario_Especial"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Horario_Servicio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Incluye_Servicios"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Ingredientes"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Nivel_Concurrencia"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Nombre"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Patrimonio_Nacional"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Precio_Dia"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Precio_Noche"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Requiere_Reserva"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Ruta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Servicios"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tiene_Descuento"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Atractivo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Ecosistema"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Establecimiento"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Evento"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Hospedaje"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Patrimonio"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Producto"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Recreacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Tipo_Transporte"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Ubicacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
