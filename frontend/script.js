@@ -15,20 +15,20 @@
       { nombre: "Palacio Portales", clase: "Atractivo_Cultural_Histórico", tipo: "Centro Cultural", gratuito: false, accesibilidad: true, horario: "09:00–18:00", tags: ["museo","histórico","patrimonio","guía"] },
       { nombre: "FEXCO", clase: "Evento_Turístico", tipo: "Feria Comercial", gratuito: false, accesibilidad: true, horario: "25 Abr – 5 May", tags: ["evento","feria","comercial"] },
     ];
-
+ 
     const translations = {
       es: { search: "Buscar", placeholder: "Ej: museos gratuitos, hoteles, senderismo…", free: "Gratuito", notFree: "Con costo", accessible: "Accesible", schedule: "Horario", noResults: "Sin resultados para", try: "Intenta con otro término." },
       en: { search: "Search", placeholder: "E.g.: free museums, hotels, hiking…", free: "Free", notFree: "Paid", accessible: "Accessible", schedule: "Schedule", noResults: "No results for", try: "Try another term." },
       qu: { search: "Mask'ay", placeholder: "Ej: wakin museo, hotel, puriy…", free: "Qullqi mana", notFree: "Qullqiwan", accessible: "Yaykuna atikuq", schedule: "Pacha", noResults: "Mana tarikuchu:", try: "Waq simiwan mask'ay." },
     };
-
+ 
     let currentLang = "es";
-
+ 
     const input = document.getElementById("searchInput");
     const btn = document.getElementById("searchBtn");
     const resultsContainer = document.getElementById("resultados");
     const emptyState = document.getElementById("emptyState");
-
+ 
     const claseColors = {
       Atractivo_Natural: "#2d6a4f",
       Atractivo_Cultural_Histórico: "#7b3f00",
@@ -40,11 +40,11 @@
       Establecimiento_Gastronomico: "#1a5c3a",
       Transporte: "#1c3a5e",
     };
-
+ 
     function getColor(clase) {
       return claseColors[clase] || "#333";
     }
-
+ 
     function renderCard(item, t) {
       const color = getColor(item.clase);
       const claseLabel = item.clase.replace(/_/g, " ");
@@ -60,12 +60,12 @@
           </div>
         </article>`;
     }
-
+ 
     function doSearch() {
       const q = input.value.trim().toLowerCase();
       const t = translations[currentLang];
       if (!q) { resultsContainer.innerHTML = ""; emptyState.style.display = "flex"; return; }
-
+ 
       emptyState.style.display = "none";
       const matches = ontologyData.filter(item =>
         item.nombre.toLowerCase().includes(q) ||
@@ -73,7 +73,7 @@
         item.tags.some(tag => tag.includes(q)) ||
         item.clase.toLowerCase().replace(/_/g,' ').includes(q)
       );
-
+ 
       if (!matches.length) {
         resultsContainer.innerHTML = `<div class="no-results"><span>${t.noResults} "<strong>${input.value}</strong>".</span><span>${t.try}</span></div>`;
         return;
@@ -85,10 +85,10 @@
         card.classList.add('card-enter');
       });
     }
-
+ 
     btn.addEventListener("click", doSearch);
     input.addEventListener("keydown", e => { if (e.key === "Enter") doSearch(); });
-
+ 
     // Quick chips
     document.querySelectorAll(".chip").forEach(chip => {
       chip.addEventListener("click", () => {
@@ -97,7 +97,7 @@
         document.querySelector(".results-section").scrollIntoView({ behavior: "smooth" });
       });
     });
-
+ 
     // Language switcher
     document.querySelectorAll(".lang-btn").forEach(lb => {
       lb.addEventListener("click", () => {
