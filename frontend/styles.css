@@ -1,6 +1,6 @@
 /* ════════════════════════════════════════════
    TURISMO COCHABAMBA — Buscador Semántico
-   styles.css  ·  Task #6
+   styles.css  ·  Task #6 + #8
    Estética: editorial de viajes · tierra y cielo andino
    ════════════════════════════════════════════ */
 
@@ -416,6 +416,27 @@ body {
 .badge--paid   { background: #fff3cd; color: #856404; }
 .badge--access { background: #cce5ff; color: #004085; }
 .badge--time   { background: #f5f0e8; color: var(--clr-muted); border: 1px solid var(--clr-border); }
+
+/* ── Nuevos estilos para campos extra (Task #8) ── */
+.card-ubicacion {
+  font-size: 0.8rem;
+  color: var(--clr-accent);
+  margin: 8px 0 4px;
+  font-weight: 500;
+}
+.card-descripcion {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  margin: 8px 0 12px;
+  line-height: 1.4;
+}
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+  grid-column: 1 / -1;
+}
 
 /* ── Empty / No-results State ── */
 .empty-state {
