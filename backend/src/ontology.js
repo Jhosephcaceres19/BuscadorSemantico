@@ -41,7 +41,6 @@ function cargarOntologia() {
 
   const xml = fs.readFileSync(owlPath, "utf-8");
 
-
   let doc;
   xml2js.parseString(xml, { explicitArray: true, xmlns: false }, (err, result) => {
     if (err) {
@@ -92,7 +91,6 @@ function cargarOntologia() {
   Object.entries(clases).forEach(([nombre, clase]) => {
     const p = props[nombre] || {};
     
-    // Horario
     let horario = null;
     if (p["Horario Apertura"] && p["Horario Cierra"]) {
       horario = `${p["Horario Apertura"]}–${p["Horario Cierra"]}`;
@@ -104,7 +102,6 @@ function cargarOntologia() {
       horario = `${p["Fecha Inicio"]} – ${p["Fecha Fin"]}`;
     }
 
-    // Gratuito
     let gratuito = null;
     if (p["Gratuito"] !== undefined) {
       gratuito = p["Gratuito"] === "true";
@@ -138,7 +135,6 @@ function cargarOntologia() {
 
     ontologyData.push(entity);
 
-    // Agregar triples al grafo RDF (usando URIs simples como strings)
     const sujeto = entity.nombre.replace(/ /g, "_");
     addTriple(sujeto, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", entity.clase);
     addTriple(sujeto, "tipo", entity.tipo);
@@ -160,16 +156,13 @@ function cargarOntologia() {
   console.log(`✅ Grafo RDF construido con ${Object.keys(rdfGraph).length} sujetos`);
 }
 
-// ── Ejecutor de consultas SPARQL (recibe el término aparte) ──
 function ejecutarSparql(queryString, searchTerm) {
   if (!rdfGraph) throw new Error("Grafo RDF no cargado");
 
-  // Validación básica: debe contener SELECT y WHERE
   if (!/SELECT\s+/i.test(queryString) || !/WHERE\s*\{/i.test(queryString)) {
     throw new Error("Sintaxis SPARQL inválida: se esperaba SELECT ... WHERE {...}");
   }
 
-  // Extraer las variables SELECT
   const selectVarsMatch = queryString.match(/SELECT\s+(.+?)\s+WHERE/i);
   let selectVars = [];
   if (selectVarsMatch) {
@@ -183,20 +176,16 @@ function ejecutarSparql(queryString, searchTerm) {
 
   for (const subject in rdfGraph) {
     let match = false;
-    // Buscar en nombre
     const nombreValues = rdfGraph[subject]['nombre'];
     if (nombreValues && nombreValues.some(val => val.toLowerCase().includes(termLower))) match = true;
-    // Buscar en tipo
     if (!match) {
       const tipoValues = rdfGraph[subject]['tipo'];
       if (tipoValues && tipoValues.some(val => val.toLowerCase().includes(termLower))) match = true;
     }
-    // Buscar en clase
     if (!match) {
       const claseValues = rdfGraph[subject]['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'];
       if (claseValues && claseValues.some(val => val.toLowerCase().includes(termLower))) match = true;
     }
-    // Búsqueda general en cualquier propiedad
     if (!match) {
       for (const pred in rdfGraph[subject]) {
         if (rdfGraph[subject][pred].some(obj => obj.toLowerCase().includes(termLower))) {
@@ -229,13 +218,103 @@ function ejecutarSparql(queryString, searchTerm) {
   return results;
 }
 
-// ── Búsqueda usando SPARQL (construye consulta y la ejecuta) ──
+// ============================================
+// FUNCIÓN DE BÚSQUEDA MEJORADA
+// ============================================
 function buscar(q) {
   if (!loaded) cargarOntologia();
-  const term = q.trim().toLowerCase();
-  if (!term) return [];
+  const termino = q.trim().toLowerCase();
+  if (!termino) return [];
 
-  // Consulta SPARQL con múltiples regex (sintácticamente válida)
+  // ============================================
+  // 1. TRADUCCIÓN DE PREGUNTAS
+  // ============================================
+  
+  // Lugares gratuitos
+  if (termino === "true") {
+    return ontologyData.filter((item) => item.gratuito === true);
+  }
+  
+  // Museos (búsqueda más amplia)
+  if (termino === "museo") {
+    return ontologyData.filter((item) => {
+      const nombre = (item.nombre || "").toLowerCase();
+      const tipo = (item.tipo || "").toLowerCase();
+      return nombre.includes("museo") || tipo.includes("museo");
+    });
+  }
+  
+  // Hoteles / Hospedaje
+  if (termino === "hospedaje") {
+    return ontologyData.filter((item) => {
+      const nombre = (item.nombre || "").toLowerCase();
+      return item.clase === "Hospedaje" || nombre.includes("hotel");
+    });
+  }
+  
+  // Restaurantes
+  if (termino === "restaurante") {
+    return ontologyData.filter((item) => {
+      const nombre = (item.nombre || "").toLowerCase();
+      return item.clase === "Establecimiento_Gastronomico" ||
+             nombre.includes("restaurante") ||
+             nombre.includes("picantería");
+    });
+  }
+  
+  // Platos típicos / Gastronomía
+  if (termino === "gastronomía") {
+    return ontologyData.filter((item) => item.clase === "Producto_Alimenticio");
+  }
+  
+  // Parques / Naturales (SOLO PARQUES)
+  if (termino === "natural") {
+    const nombresParques = [
+      "parque de la familia",
+      "parque nacional tunari",
+      "parque mariscal santa cruz",
+      "parque de educación vial",
+      "parque kanata",
+      "parque cretácico de sacaba",
+      "parque ecoturístico toro toro",
+      "parque nacional torotoro"
+    ];
+    return ontologyData.filter((item) => {
+      const nombre = (item.nombre || "").toLowerCase();
+      return nombresParques.some(parque => nombre.includes(parque));
+    });
+  }
+  
+  // Eventos
+  if (termino === "evento") {
+    return ontologyData.filter((item) => item.clase === "Evento_Turístico");
+  }
+  
+  // Accesibilidad
+  if (termino === "accesible") {
+    return ontologyData.filter((item) => item.accesibilidad === true);
+  }
+  
+  // Transporte
+  if (termino === "transporte") {
+    return ontologyData.filter((item) => item.clase === "Transporte");
+  }
+  
+  // Iglesias
+  if (termino === "iglesia") {
+    return ontologyData.filter((item) => {
+      const nombre = (item.nombre || "").toLowerCase();
+      return nombre.includes("catedral") || 
+             nombre.includes("iglesia") || 
+             nombre.includes("templo") ||
+             nombre.includes("convento");
+    });
+  }
+
+  // ============================================
+  // 2. CONSULTA SPARQL SIMULADA (lo que ya tenían tus compañeros)
+  // ============================================
+  
   const sparqlQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     SELECT ?nombre ?tipo ?clase ?descripcion ?ubicacion ?horario ?gratuito ?accesibilidad WHERE {
@@ -247,36 +326,35 @@ function buscar(q) {
       OPTIONAL { ?s horario ?horario }
       OPTIONAL { ?s gratuito ?gratuito }
       OPTIONAL { ?s accesibilidad ?accesibilidad }
-      FILTER (regex(?nombre, "${term.replace(/"/g, '\\"')}", "i") ||
-              regex(?tipo, "${term.replace(/"/g, '\\"')}", "i") ||
-              regex(?clase, "${term.replace(/"/g, '\\"')}", "i"))
+      FILTER (regex(?nombre, "${termino.replace(/"/g, '\\"')}", "i") ||
+              regex(?tipo, "${termino.replace(/"/g, '\\"')}", "i") ||
+              regex(?clase, "${termino.replace(/"/g, '\\"')}", "i"))
     }
   `;
 
   try {
-    // Pasamos el término aparte para evitar parsear el FILTER
-    const resultados = ejecutarSparql(sparqlQuery, term);
-    return resultados;
+    const resultados = ejecutarSparql(sparqlQuery, termino);
+    if (resultados && resultados.length > 0) {
+      return resultados;
+    }
+    throw new Error("No hay resultados");
   } catch (err) {
-    console.error("❌ Error en consulta SPARQL:", err.message);
-    // Fallback a búsqueda local
-    console.warn("Usando búsqueda por filtro local como respaldo");
+    // 3. FALLBACK: Búsqueda normal por texto (lo que ya tenían)
     return ontologyData.filter((item) => {
       const claseNorm = item.clase.toLowerCase().replace(/_/g, " ");
       return (
-        item.nombre.toLowerCase().includes(term) ||
-        claseNorm.includes(term) ||
-        (item.tipo && item.tipo.toLowerCase().includes(term)) ||
-        (item.descripcion && item.descripcion.toLowerCase().includes(term)) ||
-        (item.ubicacion && item.ubicacion.toLowerCase().includes(term)) ||
-        (item.actividades && item.actividades.toLowerCase().includes(term)) ||
-        (item.ingredientes && item.ingredientes.toLowerCase().includes(term))
+        item.nombre.toLowerCase().includes(termino) ||
+        claseNorm.includes(termino) ||
+        (item.tipo && item.tipo.toLowerCase().includes(termino)) ||
+        (item.descripcion && item.descripcion.toLowerCase().includes(termino)) ||
+        (item.ubicacion && item.ubicacion.toLowerCase().includes(termino)) ||
+        (item.actividades && item.actividades.toLowerCase().includes(termino)) ||
+        (item.ingredientes && item.ingredientes.toLowerCase().includes(termino))
       );
     });
   }
 }
 
-// Cargar al importar
 cargarOntologia();
 
 module.exports = { buscar };

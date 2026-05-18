@@ -1,9 +1,14 @@
+// frontend/script.js
+// Buscador Semántico - Turismo Cochabamba
+// Versión mejorada: soporte para preguntas en lenguaje natural + chips + multilingualidad
+
 const BASE_URL = "http://localhost:3000/api/search";
-    // ── Traducciones ──
+
+// ── Traducciones de interfaz ──
 const translations = {
-  es: { search: "Buscar", placeholder: "Ej: museos gratuitos, hoteles, senderismo…", free: "Gratuito", notFree: "Con costo", accessible: "Accesible", schedule: "Horario", noResults: "Sin resultados para", try: "Intenta con otro término." },
-  en: { search: "Search", placeholder: "E.g.: free museums, hotels, hiking…", free: "Free", notFree: "Paid", accessible: "Accessible", schedule: "Schedule", noResults: "No results for", try: "Try another term." },
-  qu: { search: "Mask'ay", placeholder: "Ej: wakin museo, hotel, puriy…", free: "Qullqi mana", notFree: "Qullqiwan", accessible: "Yaykuna atikuq", schedule: "Pacha", noResults: "Mana tarikuchu:", try: "Waq simiwan mask'ay." },
+  es: { search: "Buscar", placeholder: "Ej: ¿Qué lugares son gratuitos?, museos, hoteles...", free: "Gratuito", notFree: "Con costo", accessible: "Accesible", schedule: "Horario", noResults: "Sin resultados para", try: "Intenta con otro término.", loading: "Buscando..." },
+  en: { search: "Search", placeholder: "E.g.: free places, museums, hotels...", free: "Free", notFree: "Paid", accessible: "Accessible", schedule: "Schedule", noResults: "No results for", try: "Try another term.", loading: "Searching..." },
+  qu: { search: "Mask'ay", placeholder: "Ej: mana qullqi, museo, hotel...", free: "Qullqi mana", notFree: "Qullqiwan", accessible: "Yaykuna atikuq", schedule: "Pacha", noResults: "Mana tarikuchu:", try: "Waq simiwan mask'ay.", loading: "Mask'ay..." }
 };
 
 let currentLang = "es";
@@ -13,7 +18,7 @@ const btn = document.getElementById("searchBtn");
 const resultsContainer = document.getElementById("resultados");
 const emptyState = document.getElementById("emptyState");
 
-// ── Colores por clase (igual que antes) ──
+// ── Colores por clase ──
 const claseColors = {
   Atractivo_Natural: "#2d6a4f",
   Atractivo_Cultural_Histórico: "#7b3f00",
@@ -30,7 +35,6 @@ function getColor(clase) {
   return claseColors[clase] || "#333";
 }
 
-// ── Seguridad: escapar HTML ──
 function escapeHtml(str) {
   if (!str) return '';
   return str.replace(/[&<>]/g, function(m) {
@@ -39,6 +43,96 @@ function escapeHtml(str) {
     if (m === '>') return '&gt;';
     return m;
   });
+}
+
+// ============================================
+// TRADUCTOR COMPLETO DE PREGUNTAS
+// ============================================
+function traducirPregunta(texto) {
+  const t = texto.toLowerCase().trim();
+  
+  // 1. GRATUITOS
+  if (t.includes("gratuito") || t.includes("gratuitos") || t.includes("gratis") || 
+      t.includes("sin costo") || t.includes("entrada libre")) {
+    return "true";
+  }
+  
+  // 2. MUSEOS
+  if (t.includes("museo") || t.includes("museos")) {
+    return "museo";
+  }
+  
+  // 3. HOTELES / HOSPEDAJE
+  if (t.includes("hotel") || t.includes("hoteles") || t.includes("hospedaje") || 
+      t.includes("alojamiento") || t.includes("dónde dormir")) {
+    return "hospedaje";
+  }
+  
+  // 4. RESTAURANTES
+  if (t.includes("restaurante") || t.includes("restaurantes") || t.includes("dónde comer") || 
+      t.includes("almorzar") || t.includes("cenar") || t.includes("comer fuera")) {
+    return "restaurante";
+  }
+  
+  // 5. PLATOS TÍPICOS / GASTRONOMÍA
+  if ((t.includes("plato") || t.includes("comida típica") || t.includes("gastronomía") || 
+       t.includes("qué comer") || t.includes("especialidad") || t.includes("típico")) && 
+       !t.includes("restaurante") && !t.includes("dónde comer")) {
+    return "gastronomía";
+  }
+  
+  // 6. PARQUES / NATURALES
+  if (t.includes("parque") || t.includes("parques") || t.includes("natural") || t.includes("naturaleza")) {
+    return "natural";
+  }
+  
+  // 7. ACCESIBILIDAD
+  if (t.includes("accesible") || t.includes("silla de ruedas") || t.includes("rampa") || 
+      t.includes("discapacidad") || t.includes("accesibilidad")) {
+    return "accesible";
+  }
+  
+  // 8. TRANSPORTE
+  if (t.includes("transporte") || t.includes("bus") || t.includes("taxi") || 
+      t.includes("teleférico") || t.includes("cómo llegar")) {
+    return "transporte";
+  }
+  
+  // 9. EVENTOS / FESTIVIDADES
+  if (t.includes("evento") || t.includes("eventos") || t.includes("festividad") || 
+      t.includes("feria") || t.includes("celebración")) {
+    return "evento";
+  }
+  
+  // 10. IGLESIAS
+  if (t.includes("iglesia") || t.includes("iglesias") || t.includes("catedral") || 
+      t.includes("templo") || t.includes("religioso")) {
+    return "iglesia";
+  }
+  
+  // 11. LUGARES HISTÓRICOS
+  if (t.includes("histórico") || t.includes("históricos") || t.includes("monumento") || 
+      t.includes("patrimonio")) {
+    return "histórico";
+  }
+  
+  // 12. SENDERISMO
+  if (t.includes("senderismo") || t.includes("trekking") || t.includes("caminata")) {
+    return "senderismo";
+  }
+  
+  // 13. LAGUNAS
+  if (t.includes("laguna") || t.includes("lago") || t.includes("río")) {
+    return "laguna";
+  }
+  
+  // 14. MIRADORES
+  if (t.includes("mirador") || t.includes("vista") || t.includes("panorámico")) {
+    return "mirador";
+  }
+  
+  // Si no hay coincidencia, devolver el texto original
+  return texto;
 }
 
 // ── Renderizar una tarjeta con datos reales ──
@@ -50,81 +144,84 @@ function renderCard(item, t) {
       <div class="card-clase">${escapeHtml(claseLabel)}</div>
       <h3 class="card-nombre">${escapeHtml(item.nombre)}</h3>
       <p class="card-tipo">${escapeHtml(item.tipo || '')}</p>
-      ${item.ubicacion ? `<p class="card-ubicacion"> ${escapeHtml(item.ubicacion)}</p>` : ''}
+      ${item.ubicacion ? `<p class="card-ubicacion">📍 ${escapeHtml(item.ubicacion)}</p>` : ''}
       ${item.descripcion ? `<p class="card-descripcion">${escapeHtml(item.descripcion)}</p>` : ''}
       <div class="card-meta">
         ${item.gratuito !== undefined && item.gratuito !== null ? 
           `<span class="badge ${item.gratuito ? 'badge--free' : 'badge--paid'}">${item.gratuito ? t.free : t.notFree}</span>` : ''}
-        ${item.accesibilidad === true ? `<span class="badge badge--access"> ${t.accessible}</span>` : ''}
-        ${item.horario ? `<span class="badge badge--time"> ${escapeHtml(item.horario)}</span>` : ''}
+        ${item.accesibilidad === true ? `<span class="badge badge--access">♿ ${t.accessible}</span>` : ''}
+        ${item.horario ? `<span class="badge badge--time">⏰ ${escapeHtml(item.horario)}</span>` : ''}
       </div>
     </article>`;
 }
 
 // ── Búsqueda real contra el backend ──
 async function doSearch() {
-  const q = input.value.trim().toLowerCase();
+  let q = input.value.trim();
   const t = translations[currentLang];
 
-  // Limpiar resultados anteriores
-  resultsContainer.innerHTML = '';
-
   if (!q) {
+    resultsContainer.innerHTML = "";
     emptyState.style.display = "flex";
     return;
   }
 
+  const terminoBusqueda = traducirPregunta(q);
+  
+  if (terminoBusqueda !== q) {
+    console.log(`🔍 Pregunta: "${q}" → Traducido a: "${terminoBusqueda}"`);
+  }
+
   emptyState.style.display = "none";
-  resultsContainer.innerHTML = '<div class="loading">🔍 Buscando...</div>';
+  resultsContainer.innerHTML = `<div class="loading">🔍 ${t.loading}</div>`;
 
   try {
-    const response = await fetch(`${BASE_URL}?q=${encodeURIComponent(q)}`);
+    const response = await fetch(`${BASE_URL}?q=${encodeURIComponent(terminoBusqueda)}`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const data = await response.json();
-    const resultados = data.resultados || [];
+    let resultados = data.resultados || [];
 
     if (resultados.length === 0) {
       resultsContainer.innerHTML = `
         <div class="no-results">
-          <span>${t.noResults} "<strong>${escapeHtml(input.value)}</strong>".</span>
+          <span>${t.noResults} "<strong>${escapeHtml(q)}</strong>".</span>
           <span>${t.try}</span>
         </div>`;
       return;
     }
 
-    // Generar HTML de todas las tarjetas
     resultsContainer.innerHTML = resultados.map(item => renderCard(item, t)).join('');
 
-    // Aplicar animación de entrada
     resultsContainer.querySelectorAll('.result-card').forEach((card, i) => {
       card.style.animationDelay = `${i * 60}ms`;
       card.classList.add('card-enter');
     });
 
   } catch (error) {
-    console.error("Error en la búsqueda:", error);
+    console.error("Error:", error);
     resultsContainer.innerHTML = `
       <div class="no-results">
-        Error de conexión. ¿El servidor backend está corriendo en http://localhost:3000?
+        ❌ Error de conexión. ¿Servidor corriendo?
       </div>`;
   }
 }
 
-// ── Event listeners ──
 btn.addEventListener("click", doSearch);
 input.addEventListener("keydown", e => { if (e.key === "Enter") doSearch(); });
 
-// Chips de búsqueda rápida
-document.querySelectorAll(".chip").forEach(chip => {
-  chip.addEventListener("click", () => {
-    input.value = chip.dataset.query;
-    doSearch();
-    document.querySelector(".results-section")?.scrollIntoView({ behavior: "smooth" });
+const chips = document.querySelectorAll(".chip");
+if (chips.length > 0) {
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      const query = chip.getAttribute("data-query");
+      input.value = query;
+      doSearch();
+      document.querySelector(".results-section")?.scrollIntoView({ behavior: "smooth" });
+    });
   });
-});
+}
 
-// Cambio de idioma
 document.querySelectorAll(".lang-btn").forEach(lb => {
   lb.addEventListener("click", () => {
     document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
@@ -137,7 +234,9 @@ document.querySelectorAll(".lang-btn").forEach(lb => {
   });
 });
 
-// Inicializar placeholder y botón con idioma por defecto
 const t0 = translations.es;
 input.placeholder = t0.placeholder;
 btn.textContent = t0.search;
+
+console.log("✅ Buscador semántico mejorado listo");
+console.log("📝 Preguntas soportadas: gratuitos, museos, hoteles, restaurantes, platos típicos, parques, accesibilidad, transporte, eventos");
