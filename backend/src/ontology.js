@@ -1,360 +1,313 @@
 // backend/src/ontology.js
-// Parsea TurismoLocal.owx (OWL/XML) usando xml2js.
-// Construye un grafo RDF en memoria y permite búsquedas con consultas SPARQL (simuladas pero sintácticamente correctas).
-// Exporta: buscar(q)
+// Motor semántico nativo: Lee TurismoLocal.ttl con N3.Store
+// Ejecuta consultas SPARQL-like mediante patrones de tripletas
+// Cumple issue #17 - Sin xml2js, sin JSON en las respuestas
 
-const fs = require("fs");
+const fs   = require("fs");
 const path = require("path");
-const xml2js = require("xml2js");
+const N3   = require("n3");
+const { DataFactory } = N3;
+const { namedNode, literal, quad: createQuad } = DataFactory;
 
-// ── Helpers ──────────────────────────────────────────────
+// ── Namespaces ───────────────────────────────────────────
 const BASE = "http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#";
-
-// "#Cristo_de_la_Concordia" → "Cristo de la Concordia"
-const limpiarIRI = (iri = "") =>
-  decodeURIComponent(iri.replace(/^.*#/, "")).replace(/_/g, " ");
+const RDF  = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+const OWL  = "http://www.w3.org/2002/07/owl#";
+const XSD  = "http://www.w3.org/2001/XMLSchema#";
 
 // ── Estado interno ───────────────────────────────────────
-let ontologyData = [];
-let rdfGraph = null;
+let store = null;        // N3.Store con todos los triples
+let prefixes = {};       // Prefijos del archivo Turtle
 let loaded = false;
 
-// ── Funciones para construir grafo RDF ───────────────────
-function addTriple(subj, pred, obj) {
-  if (!rdfGraph[subj]) rdfGraph[subj] = {};
-  if (!rdfGraph[subj][pred]) rdfGraph[subj][pred] = [];
-  if (!rdfGraph[subj][pred].includes(obj)) {
-    rdfGraph[subj][pred].push(obj);
-  }
-}
+// ── Utilidades ───────────────────────────────────────────
+const localName = (iri = "") => {
+  const idx = iri.lastIndexOf("#");
+  return idx >= 0
+    ? decodeURIComponent(iri.slice(idx + 1)).replace(/_/g, " ")
+    : iri;
+};
 
-// ── Carga y parseo (original + construcción de grafo) ──
+// Clases OWL a ignorar
+const CLASES_META = new Set([
+  `${OWL}NamedIndividual`,
+  `${OWL}Class`,
+  `${OWL}Ontology`,
+  `${OWL}Thing`,
+]);
+
+// ── Carga del archivo Turtle ─────────────────────────────
 function cargarOntologia() {
   if (loaded) return;
 
-  const owlPath = path.join(__dirname, "../data/TurismoLocal.owx");
+  const ttlPath = path.join(__dirname, "../data/TurismoLocal.ttl");
 
-  if (!fs.existsSync(owlPath)) {
-    console.error(`❌ Archivo no encontrado: ${owlPath}`);
+  if (!fs.existsSync(ttlPath)) {
+    console.error(`❌ Archivo no encontrado: ${ttlPath}`);
     process.exit(1);
   }
 
-  const xml = fs.readFileSync(owlPath, "utf-8");
+  const contenido = fs.readFileSync(ttlPath, "utf-8");
+  const parser = new N3.Parser({ format: "Turtle" });
+  store = new N3.Store();
 
-  let doc;
-  xml2js.parseString(xml, { explicitArray: true, xmlns: false }, (err, result) => {
-    if (err) {
-      console.error("❌ Error al parsear XML:", err.message);
-      process.exit(1);
-    }
-    doc = result;
-  });
-
-  const ontology = doc["Ontology"] || doc["rdf:RDF"] || Object.values(doc)[0];
-
-  // ── 1. Mapear individuos a su clase ─────────────────────
-  const clases = {};
-  (ontology["ClassAssertion"] || []).forEach((ca) => {
-    const claseIRI = ca["Class"]?.[0]?.["$"]?.["IRI"] || "";
-    const indIRI = ca["NamedIndividual"]?.[0]?.["$"]?.["IRI"] || "";
-    if (!claseIRI || !indIRI) return;
-
-    const clase = limpiarIRI(claseIRI);
-    const ind = limpiarIRI(indIRI);
-
-    const ignorar = ["NamedIndividual", "Class", "Ontology", "Thing"];
-    if (!ignorar.includes(clase)) {
-      clases[ind] = clase.replace(/ /g, "_");
-    }
-  });
-
-  // ── 2. Recoger data properties por individuo ─────────────
-  const props = {};
-  (ontology["DataPropertyAssertion"] || []).forEach((dpa) => {
-    const propIRI = dpa["DataProperty"]?.[0]?.["$"]?.["IRI"] || "";
-    const indIRI = dpa["NamedIndividual"]?.[0]?.["$"]?.["IRI"] || "";
-    const literal = dpa["Literal"]?.[0];
-    if (!propIRI || !indIRI || literal === undefined) return;
-
-    const prop = limpiarIRI(propIRI);
-    const ind = limpiarIRI(indIRI);
-    const valor = typeof literal === "object" ? literal["_"] || literal["$"]?.["_"] || "" : literal;
-
-    if (!props[ind]) props[ind] = {};
-    props[ind][prop] = valor;
-  });
-
-  // ── 3. Construir array de entidades (ontologyData) y grafo RDF ──
-  ontologyData = [];
-  rdfGraph = {};
-
-  Object.entries(clases).forEach(([nombre, clase]) => {
-    const p = props[nombre] || {};
-    
-    let horario = null;
-    if (p["Horario Apertura"] && p["Horario Cierra"]) {
-      horario = `${p["Horario Apertura"]}–${p["Horario Cierra"]}`;
-    } else if (p["Horario Atencion"]) {
-      horario = p["Horario Atencion"];
-    } else if (p["Horario Servicio"]) {
-      horario = p["Horario Servicio"];
-    } else if (p["Fecha Inicio"] && p["Fecha Fin"]) {
-      horario = `${p["Fecha Inicio"]} – ${p["Fecha Fin"]}`;
-    }
-
-    let gratuito = null;
-    if (p["Gratuito"] !== undefined) {
-      gratuito = p["Gratuito"] === "true";
-    } else if (p["Costo Entrada"] !== undefined) {
-      gratuito = parseFloat(p["Costo Entrada"]) === 0;
-    }
-
-    const entity = {
-      nombre: p["Nombre"] || nombre,
-      clase,
-      tipo: p["Tipo Atractivo"] ||
-            p["Tipo Hospedaje"] ||
-            p["Tipo Establecimiento"] ||
-            p["Tipo Evento"] ||
-            p["Tipo Transporte"] ||
-            p["Tipo Producto"] ||
-            p["Tipo Recreacion"] ||
-            p["Tipo Ecosistema"] ||
-            clase.replace(/_/g, " "),
-      descripcion: p["Descripcion"] || null,
-      ubicacion: p["Ubicacion"] || null,
-      horario,
-      gratuito,
-      accesibilidad: p["Accesibilidad"] === "true" ? true : (p["Accesibilidad"] === "false" ? false : null),
-      precioNoche: p["Precio Noche"] ? parseFloat(p["Precio Noche"]) : null,
-      precioDia: p["Precio Dia"] ? parseFloat(p["Precio Dia"]) : null,
-      costoEntrada: p["Costo Entrada"] ? parseFloat(p["Costo Entrada"]) : null,
-      actividades: p["Actividades"] || null,
-      ingredientes: p["Ingredientes"] || null,
-    };
-
-    ontologyData.push(entity);
-
-    const sujeto = entity.nombre.replace(/ /g, "_");
-    addTriple(sujeto, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", entity.clase);
-    addTriple(sujeto, "tipo", entity.tipo);
-    addTriple(sujeto, "nombre", entity.nombre);
-    if (entity.descripcion) addTriple(sujeto, "descripcion", entity.descripcion);
-    if (entity.ubicacion) addTriple(sujeto, "ubicacion", entity.ubicacion);
-    if (entity.horario) addTriple(sujeto, "horario", entity.horario);
-    if (entity.gratuito !== null) addTriple(sujeto, "gratuito", entity.gratuito.toString());
-    if (entity.accesibilidad !== null) addTriple(sujeto, "accesibilidad", entity.accesibilidad.toString());
-    if (entity.precioNoche) addTriple(sujeto, "precioNoche", entity.precioNoche.toString());
-    if (entity.precioDia) addTriple(sujeto, "precioDia", entity.precioDia.toString());
-    if (entity.costoEntrada) addTriple(sujeto, "costoEntrada", entity.costoEntrada.toString());
-    if (entity.actividades) addTriple(sujeto, "actividades", entity.actividades);
-    if (entity.ingredientes) addTriple(sujeto, "ingredientes", entity.ingredientes);
-  });
+  try {
+    const quads = parser.parse(contenido);
+    store.addQuads(quads);
+    console.log(`✅ Grafo RDF cargado: ${store.size} triples desde TurismoLocal.ttl`);
+  } catch (err) {
+    console.error("❌ Error al parsear Turtle:", err.message);
+    process.exit(1);
+  }
 
   loaded = true;
-  console.log(`✅ Ontología cargada: ${ontologyData.length} entidades`);
-  console.log(`✅ Grafo RDF construido con ${Object.keys(rdfGraph).length} sujetos`);
 }
 
-function ejecutarSparql(queryString, searchTerm) {
-  if (!rdfGraph) throw new Error("Grafo RDF no cargado");
+// ── Obtener entidad desde el store ──────────────────────
+function obtenerEntidad(uri) {
+  const quads = store.getQuads(uri, null, null, null);
+  if (quads.length === 0) return null;
 
-  if (!/SELECT\s+/i.test(queryString) || !/WHERE\s*\{/i.test(queryString)) {
-    throw new Error("Sintaxis SPARQL inválida: se esperaba SELECT ... WHERE {...}");
-  }
+  const entidad = {
+    id: uri.value,
+    propiedades: {}
+  };
 
-  const selectVarsMatch = queryString.match(/SELECT\s+(.+?)\s+WHERE/i);
-  let selectVars = [];
-  if (selectVarsMatch) {
-    selectVars = selectVarsMatch[1].split(/\s+/).filter(v => v.startsWith('?')).map(v => v.substring(1));
-  } else {
-    selectVars = ['nombre', 'tipo', 'clase', 'descripcion', 'ubicacion', 'horario', 'gratuito', 'accesibilidad'];
-  }
+  quads.forEach(quad => {
+    const pred = quad.predicate.value;
+    const obj = quad.object;
 
-  const termLower = searchTerm.toLowerCase();
-  const results = [];
-
-  for (const subject in rdfGraph) {
-    let match = false;
-    const nombreValues = rdfGraph[subject]['nombre'];
-    if (nombreValues && nombreValues.some(val => val.toLowerCase().includes(termLower))) match = true;
-    if (!match) {
-      const tipoValues = rdfGraph[subject]['tipo'];
-      if (tipoValues && tipoValues.some(val => val.toLowerCase().includes(termLower))) match = true;
+    if (pred === `${RDF}type`) {
+      if (!entidad.tipos) entidad.tipos = [];
+      entidad.tipos.push(obj.value);
+    } else if (N3.Util.isLiteral(obj)) {
+      entidad.propiedades[pred] = obj.value;
+    } else {
+      // Object property - referencia a otra entidad
+      if (!entidad.referencias) entidad.referencias = {};
+      if (!entidad.referencias[pred]) entidad.referencias[pred] = [];
+      entidad.referencias[pred].push(obj.value);
     }
-    if (!match) {
-      const claseValues = rdfGraph[subject]['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'];
-      if (claseValues && claseValues.some(val => val.toLowerCase().includes(termLower))) match = true;
+  });
+
+  return entidad;
+}
+
+// ── Búsqueda por patrón de tripletas (SPARQL-like) ──────
+function buscar(q) {
+  if (!loaded) cargarOntologia();
+
+  const termino = q.trim().toLowerCase();
+  if (!termino) return [];
+
+  const resultados = new Map(); // Usar Map para evitar duplicados
+
+  // 1. Buscar individuos (owl:NamedIndividual)
+  const individuos = store.getQuads(
+    null, 
+    namedNode(`${RDF}type`), 
+    namedNode(`${OWL}NamedIndividual`), 
+    null
+  );
+
+  // 2. Para cada individuo, verificar si coincide con el término
+  for (const quadInd of individuos) {
+    const individuo = quadInd.subject;
+    const entidad = obtenerEntidad(individuo);
+    if (!entidad) continue;
+
+    // Buscar en todas las propiedades de datos
+    let coincide = false;
+    
+    // Verificar nombre
+    if (entidad.propiedades[`${BASE}Nombre`] && 
+        entidad.propiedades[`${BASE}Nombre`].toLowerCase().includes(termino)) {
+      coincide = true;
     }
-    if (!match) {
-      for (const pred in rdfGraph[subject]) {
-        if (rdfGraph[subject][pred].some(obj => obj.toLowerCase().includes(termLower))) {
-          match = true;
+    
+    // Verificar descripción
+    if (!coincide && entidad.propiedades[`${BASE}Descripcion`] &&
+        entidad.propiedades[`${BASE}Descripcion`].toLowerCase().includes(termino)) {
+      coincide = true;
+    }
+    
+    // Verificar ubicación
+    if (!coincide && entidad.propiedades[`${BASE}Ubicacion`] &&
+        entidad.propiedades[`${BASE}Ubicacion`].toLowerCase().includes(termino)) {
+      coincide = true;
+    }
+    
+    // Verificar tipo
+    const tiposBusqueda = [
+      `${BASE}Tipo_Atractivo`,
+      `${BASE}Tipo_Hospedaje`,
+      `${BASE}Tipo_Establecimiento`,
+      `${BASE}Tipo_Evento`,
+      `${BASE}Tipo_Transporte`,
+      `${BASE}Tipo_Producto`,
+      `${BASE}Tipo_Recreacion`,
+      `${BASE}Tipo_Ecosistema`,
+      `${BASE}Tipo_Patrimonio`
+    ];
+    
+    for (const tipoProp of tiposBusqueda) {
+      if (!coincide && entidad.propiedades[tipoProp] &&
+          entidad.propiedades[tipoProp].toLowerCase().includes(termino)) {
+        coincide = true;
+        break;
+      }
+    }
+    
+    // Verificar clase/tipo RDF
+    if (!coincide && entidad.tipos) {
+      for (const tipo of entidad.tipos) {
+        if (tipo.startsWith(BASE) && localName(tipo).toLowerCase().includes(termino)) {
+          coincide = true;
           break;
         }
       }
     }
 
-    if (match) {
-      const row = {};
-      for (const varName of selectVars) {
-        let predicate = varName;
-        if (varName === 'clase') predicate = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
-        const values = rdfGraph[subject][predicate];
-        if (values && values.length > 0) {
-          let val = values[0];
-          if (varName === 'gratuito' || varName === 'accesibilidad') {
-            val = val === 'true';
-          }
-          row[varName] = val;
-        } else {
-          row[varName] = '';
-        }
+    // Verificar actividades e ingredientes
+    if (!coincide && entidad.propiedades[`${BASE}Actividades`] &&
+        entidad.propiedades[`${BASE}Actividades`].toLowerCase().includes(termino)) {
+      coincide = true;
+    }
+    
+    if (!coincide && entidad.propiedades[`${BASE}Ingredientes`] &&
+        entidad.propiedades[`${BASE}Ingredientes`].toLowerCase().includes(termino)) {
+      coincide = true;
+    }
+
+    if (coincide) {
+      resultados.set(individuo.value, entidad);
+    }
+  }
+
+  // Convertir a array y normalizar
+  return Array.from(resultados.values()).map(entidad => 
+    normalizarEntidad(entidad)
+  );
+}
+
+// ── Normalizar entidad a formato amigable ────────────────
+function normalizarEntidad(entidad) {
+  const props = entidad.propiedades;
+  
+  // Determinar tipo principal
+  let clasePrincipal = "Entidad_Turistica";
+  if (entidad.tipos) {
+    for (const tipo of entidad.tipos) {
+      if (tipo.startsWith(BASE) && !CLASES_META.has(tipo)) {
+        clasePrincipal = localName(tipo).replace(/ /g, "_");
+        break;
       }
-      if (row.nombre) row.nombre = row.nombre.replace(/_/g, " ");
-      results.push(row);
     }
   }
-  return results;
+
+  // Construir horario
+  let horario = null;
+  if (props[`${BASE}Horario_Apertura`] && props[`${BASE}Horario_Cierra`]) {
+    horario = `${props[`${BASE}Horario_Apertura`]}–${props[`${BASE}Horario_Cierra`]}`;
+  } else if (props[`${BASE}Horario_Atencion`]) {
+    horario = props[`${BASE}Horario_Atencion`];
+  } else if (props[`${BASE}Horario_Servicio`]) {
+    horario = props[`${BASE}Horario_Servicio`];
+  } else if (props[`${BASE}Horario_Especial`]) {
+    horario = props[`${BASE}Horario_Especial`];
+  } else if (props[`${BASE}Fecha_Inicio`] && props[`${BASE}Fecha_Fin`]) {
+    horario = `${props[`${BASE}Fecha_Inicio`]} – ${props[`${BASE}Fecha_Fin`]}`;
+  }
+
+  // Determinar gratuidad
+  let gratuito = null;
+  if (props[`${BASE}Gratuito`] !== undefined) {
+    gratuito = props[`${BASE}Gratuito`] === "true";
+  } else if (props[`${BASE}Costo_Entrada`] !== undefined) {
+    gratuito = parseFloat(props[`${BASE}Costo_Entrada`]) === 0;
+  }
+
+  return {
+    nombre: props[`${BASE}Nombre`] || localName(entidad.id),
+    clase: clasePrincipal,
+    tipo: props[`${BASE}Tipo_Atractivo`] ||
+          props[`${BASE}Tipo_Hospedaje`] ||
+          props[`${BASE}Tipo_Establecimiento`] ||
+          props[`${BASE}Tipo_Evento`] ||
+          props[`${BASE}Tipo_Transporte`] ||
+          props[`${BASE}Tipo_Producto`] ||
+          props[`${BASE}Tipo_Recreacion`] ||
+          props[`${BASE}Tipo_Ecosistema`] ||
+          props[`${BASE}Tipo_Patrimonio`] ||
+          clasePrincipal.replace(/_/g, " "),
+    descripcion: props[`${BASE}Descripcion`] || null,
+    ubicacion: props[`${BASE}Ubicacion`] || null,
+    horario,
+    gratuito,
+    accesibilidad: props[`${BASE}Accesibilidad`] === "true" ? true 
+                 : props[`${BASE}Accesibilidad`] === "false" ? false 
+                 : null,
+    precioNoche: props[`${BASE}Precio_Noche`] ? parseFloat(props[`${BASE}Precio_Noche`]) : null,
+    precioDia: props[`${BASE}Precio_Dia`] ? parseFloat(props[`${BASE}Precio_Dia`]) : null,
+    costoEntrada: props[`${BASE}Costo_Entrada`] ? parseFloat(props[`${BASE}Costo_Entrada`]) : null,
+    actividades: props[`${BASE}Actividades`] || null,
+    ingredientes: props[`${BASE}Ingredientes`] || null,
+    // Referencias a otras entidades
+    referencias: entidad.referencias || {}
+  };
 }
 
-// ============================================
-// FUNCIÓN DE BÚSQUEDA MEJORADA
-// ============================================
-function buscar(q) {
-  if (!loaded) cargarOntologia();
-  const termino = q.trim().toLowerCase();
-  if (!termino) return [];
+// ── Serializar resultados a Turtle ───────────────────────
+function serializarATurtle(entidades) {
+  let turtle = `
+@prefix : <${BASE}> .
+@prefix rdf: <${RDF}> .
+@prefix owl: <${OWL}> .
+@prefix xsd: <${XSD}> .
 
-  // ============================================
-  // 1. TRADUCCIÓN DE PREGUNTAS
-  // ============================================
-  
-  // Lugares gratuitos
-  if (termino === "true") {
-    return ontologyData.filter((item) => item.gratuito === true);
-  }
-  
-  // Museos (búsqueda más amplia)
-  if (termino === "museo") {
-    return ontologyData.filter((item) => {
-      const nombre = (item.nombre || "").toLowerCase();
-      const tipo = (item.tipo || "").toLowerCase();
-      return nombre.includes("museo") || tipo.includes("museo");
-    });
-  }
-  
-  // Hoteles / Hospedaje
-  if (termino === "hospedaje") {
-    return ontologyData.filter((item) => {
-      const nombre = (item.nombre || "").toLowerCase();
-      return item.clase === "Hospedaje" || nombre.includes("hotel");
-    });
-  }
-  
-  // Restaurantes
-  if (termino === "restaurante") {
-    return ontologyData.filter((item) => {
-      const nombre = (item.nombre || "").toLowerCase();
-      return item.clase === "Establecimiento_Gastronomico" ||
-             nombre.includes("restaurante") ||
-             nombre.includes("picantería");
-    });
-  }
-  
-  // Platos típicos / Gastronomía
-  if (termino === "gastronomía") {
-    return ontologyData.filter((item) => item.clase === "Producto_Alimenticio");
-  }
-  
-  // Parques / Naturales (SOLO PARQUES)
-  if (termino === "natural") {
-    const nombresParques = [
-      "parque de la familia",
-      "parque nacional tunari",
-      "parque mariscal santa cruz",
-      "parque de educación vial",
-      "parque kanata",
-      "parque cretácico de sacaba",
-      "parque ecoturístico toro toro",
-      "parque nacional torotoro"
-    ];
-    return ontologyData.filter((item) => {
-      const nombre = (item.nombre || "").toLowerCase();
-      return nombresParques.some(parque => nombre.includes(parque));
-    });
-  }
-  
-  // Eventos
-  if (termino === "evento") {
-    return ontologyData.filter((item) => item.clase === "Evento_Turístico");
-  }
-  
-  // Accesibilidad
-  if (termino === "accesible") {
-    return ontologyData.filter((item) => item.accesibilidad === true);
-  }
-  
-  // Transporte
-  if (termino === "transporte") {
-    return ontologyData.filter((item) => item.clase === "Transporte");
-  }
-  
-  // Iglesias
-  if (termino === "iglesia") {
-    return ontologyData.filter((item) => {
-      const nombre = (item.nombre || "").toLowerCase();
-      return nombre.includes("catedral") || 
-             nombre.includes("iglesia") || 
-             nombre.includes("templo") ||
-             nombre.includes("convento");
-    });
-  }
+`;
 
-  // ============================================
-  // 2. CONSULTA SPARQL SIMULADA (lo que ya tenían tus compañeros)
-  // ============================================
-  
-  const sparqlQuery = `
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    SELECT ?nombre ?tipo ?clase ?descripcion ?ubicacion ?horario ?gratuito ?accesibilidad WHERE {
-      ?s rdf:type ?clase .
-      ?s tipo ?tipo .
-      ?s nombre ?nombre .
-      OPTIONAL { ?s descripcion ?descripcion }
-      OPTIONAL { ?s ubicacion ?ubicacion }
-      OPTIONAL { ?s horario ?horario }
-      OPTIONAL { ?s gratuito ?gratuito }
-      OPTIONAL { ?s accesibilidad ?accesibilidad }
-      FILTER (regex(?nombre, "${termino.replace(/"/g, '\\"')}", "i") ||
-              regex(?tipo, "${termino.replace(/"/g, '\\"')}", "i") ||
-              regex(?clase, "${termino.replace(/"/g, '\\"')}", "i"))
-    }
-  `;
+  entidades.forEach((entidad, index) => {
+    const sujeto = `:resultado_${index}`;
+    turtle += `\n${sujeto} rdf:type :ResultadoBusqueda ;\n`;
+    
+    if (entidad.nombre) 
+      turtle += `    :nombre "${entidad.nombre}" ;\n`;
+    if (entidad.clase) 
+      turtle += `    :clase "${entidad.clase}" ;\n`;
+    if (entidad.tipo) 
+      turtle += `    :tipo "${entidad.tipo}" ;\n`;
+    if (entidad.descripcion) 
+      turtle += `    :descripcion """${entidad.descripcion}""" ;\n`;
+    if (entidad.ubicacion) 
+      turtle += `    :ubicacion "${entidad.ubicacion}" ;\n`;
+    if (entidad.horario) 
+      turtle += `    :horario "${entidad.horario}" ;\n`;
+    if (entidad.gratuito !== null) 
+      turtle += `    :gratuito "${entidad.gratuito}"^^xsd:boolean ;\n`;
+    if (entidad.accesibilidad !== null) 
+      turtle += `    :accesibilidad "${entidad.accesibilidad}"^^xsd:boolean ;\n`;
+    if (entidad.precioNoche !== null) 
+      turtle += `    :precioNoche "${entidad.precioNoche}"^^xsd:float ;\n`;
+    if (entidad.precioDia !== null) 
+      turtle += `    :precioDia "${entidad.precioDia}"^^xsd:float ;\n`;
+    if (entidad.costoEntrada !== null) 
+      turtle += `    :costoEntrada "${entidad.costoEntrada}"^^xsd:float ;\n`;
+    if (entidad.actividades) 
+      turtle += `    :actividades "${entidad.actividades}" ;\n`;
+    if (entidad.ingredientes) 
+      turtle += `    :ingredientes "${entidad.ingredientes}" ;\n`;
+    
+    turtle += `    :uri "${entidad.nombre?.replace(/ /g, '_') || `entidad_${index}`}" .\n`;
+  });
 
-  try {
-    const resultados = ejecutarSparql(sparqlQuery, termino);
-    if (resultados && resultados.length > 0) {
-      return resultados;
-    }
-    throw new Error("No hay resultados");
-  } catch (err) {
-    // 3. FALLBACK: Búsqueda normal por texto (lo que ya tenían)
-    return ontologyData.filter((item) => {
-      const claseNorm = item.clase.toLowerCase().replace(/_/g, " ");
-      return (
-        item.nombre.toLowerCase().includes(termino) ||
-        claseNorm.includes(termino) ||
-        (item.tipo && item.tipo.toLowerCase().includes(termino)) ||
-        (item.descripcion && item.descripcion.toLowerCase().includes(termino)) ||
-        (item.ubicacion && item.ubicacion.toLowerCase().includes(termino)) ||
-        (item.actividades && item.actividades.toLowerCase().includes(termino)) ||
-        (item.ingredientes && item.ingredientes.toLowerCase().includes(termino))
-      );
-    });
-  }
+  return turtle;
 }
 
+// Cargar al importar el módulo
 cargarOntologia();
 
-module.exports = { buscar };
+module.exports = { 
+  buscar,
+  serializarATurtle
+};
