@@ -1,6 +1,6 @@
 // frontend/script.js
 // Buscador Semántico - Turismo Cochabamba
-// Versión mejorada: soporte para preguntas en lenguaje natural + chips + multilingualidad
+// Versión Turtle: procesa respuestas RDF del backend semántico
 
 const BASE_URL = "http://localhost:3000/api/search";
 
@@ -46,7 +46,108 @@ function escapeHtml(str) {
 }
 
 // ============================================
-// TRADUCTOR COMPLETO DE PREGUNTAS
+// PARSER TURTLE → JSON (sin dependencias externas)
+// ============================================
+function parseTurtleToJSON(turtleText) {
+  const resultados = [];
+  const lines = turtleText.split('\n');
+  let currentEntity = null;
+  let currentProperty = null;
+  let bufferValue = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i].trim();
+    
+    // Ignorar líneas de prefijos y comentarios
+    if (line.startsWith('@prefix') || line.startsWith('#') || line === '') {
+      continue;
+    }
+    
+    // Detectar entidades de resultado
+    const resultMatch = line.match(/:resultado_(\d+)\s+rdf:type\s+:ResultadoBusqueda\s*;?/);
+    if (resultMatch) {
+      if (currentEntity) {
+        resultados.push(currentEntity);
+      }
+      currentEntity = {
+        id: resultMatch[1]
+      };
+      continue;
+    }
+    
+    // Detectar metadatos de consulta
+    const queryMatch = line.match(/:terminoBusqueda\s+"([^"]+)"/);
+    if (queryMatch && currentEntity === null) {
+      // Es metadato, ignorar por ahora
+      continue;
+    }
+    
+    if (currentEntity) {
+      // Procesar propiedad con valor multilínea (""")
+      if (currentProperty && (line.endsWith(';') || line.endsWith('.'))) {
+        // Fin del valor multilínea
+        bufferValue += ' ' + line.replace(/"""/g, '').replace(/[;.]$/, '').trim();
+        currentEntity[currentProperty] = bufferValue.trim();
+        currentProperty = null;
+        bufferValue = '';
+        continue;
+      }
+      
+      if (currentProperty) {
+        // Continuar acumulando valor multilínea
+        bufferValue += ' ' + line.replace(/"""/g, '');
+        continue;
+      }
+      
+      // Detectar propiedad con valor normal
+      const propMatch = line.match(/:(\w+)\s+(.+?)\s*([.;])$/);
+      if (propMatch) {
+        const propName = propMatch[1];
+        let value = propMatch[2].trim();
+        const endChar = propMatch[3];
+        
+        // Detectar valor multilínea
+        if (value.startsWith('"""') && !value.endsWith('"""')) {
+          currentProperty = propName;
+          bufferValue = value.replace(/"""/g, '');
+          continue;
+        }
+        
+        // Limpiar valor
+        value = value
+          .replace(/"""/g, '')
+          .replace(/"(\^\^[^"]+)?/g, (match, type) => type || '')
+          .replace(/;$/, '')
+          .trim();
+        
+        // Convertir tipos
+        if (value === 'true' || value === 'false') {
+          value = value === 'true';
+        } else if (!isNaN(value) && value !== '') {
+          value = parseFloat(value);
+        }
+        
+        currentEntity[propName] = value;
+        
+        // Si termina con punto, la entidad está completa
+        if (endChar === '.' && propName === 'uri') {
+          resultados.push(currentEntity);
+          currentEntity = null;
+        }
+      }
+    }
+  }
+  
+  // Agregar última entidad si existe
+  if (currentEntity) {
+    resultados.push(currentEntity);
+  }
+  
+  return resultados;
+}
+
+// ============================================
+// TRADUCTOR DE PREGUNTAS
 // ============================================
 function traducirPregunta(texto) {
   const t = texto.toLowerCase().trim();
@@ -137,12 +238,14 @@ function traducirPregunta(texto) {
 
 // ── Renderizar una tarjeta con datos reales ──
 function renderCard(item, t) {
-  const color = getColor(item.clase);
-  const claseLabel = (item.clase || '').replace(/_/g, ' ');
+  const clase = item.clase || '';
+  const color = getColor(clase);
+  const claseLabel = clase.replace(/_/g, ' ');
+  
   return `
     <article class="result-card" style="--accent:${color}">
       <div class="card-clase">${escapeHtml(claseLabel)}</div>
-      <h3 class="card-nombre">${escapeHtml(item.nombre)}</h3>
+      <h3 class="card-nombre">${escapeHtml(item.nombre || 'Sin nombre')}</h3>
       <p class="card-tipo">${escapeHtml(item.tipo || '')}</p>
       ${item.ubicacion ? `<p class="card-ubicacion">📍 ${escapeHtml(item.ubicacion)}</p>` : ''}
       ${item.descripcion ? `<p class="card-descripcion">${escapeHtml(item.descripcion)}</p>` : ''}
@@ -152,10 +255,15 @@ function renderCard(item, t) {
         ${item.accesibilidad === true ? `<span class="badge badge--access">♿ ${t.accessible}</span>` : ''}
         ${item.horario ? `<span class="badge badge--time">⏰ ${escapeHtml(item.horario)}</span>` : ''}
       </div>
+      ${item.precioNoche ? `<p class="card-precio">💤 Noche: Bs. ${item.precioNoche}</p>` : ''}
+      ${item.precioDia ? `<p class="card-precio">☀️ Día: Bs. ${item.precioDia}</p>` : ''}
+      ${item.costoEntrada ? `<p class="card-precio">🎫 Entrada: Bs. ${item.costoEntrada}</p>` : ''}
+      ${item.actividades ? `<p class="card-actividades">🎯 ${escapeHtml(item.actividades)}</p>` : ''}
+      ${item.ingredientes ? `<p class="card-ingredientes">🍳 ${escapeHtml(item.ingredientes)}</p>` : ''}
     </article>`;
 }
 
-// ── Búsqueda real contra el backend ──
+// ── Búsqueda real contra el backend (Turtle) ──
 async function doSearch() {
   let q = input.value.trim();
   const t = translations[currentLang];
@@ -176,11 +284,21 @@ async function doSearch() {
   resultsContainer.innerHTML = `<div class="loading">🔍 ${t.loading}</div>`;
 
   try {
-    const response = await fetch(`${BASE_URL}?q=${encodeURIComponent(terminoBusqueda)}`);
+    const response = await fetch(`${BASE_URL}?q=${encodeURIComponent(terminoBusqueda)}`, {
+      headers: {
+        'Accept': 'text/turtle'
+      }
+    });
+    
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
-    const data = await response.json();
-    let resultados = data.resultados || [];
+    // Obtener respuesta como texto Turtle
+    const turtleText = await response.text();
+    console.log('📄 Respuesta Turtle recibida:', turtleText.substring(0, 200) + '...');
+    
+    // Parsear Turtle a objetos utilizables
+    const resultados = parseTurtleToJSON(turtleText);
+    console.log('✅ Resultados parseados:', resultados.length);
 
     if (resultados.length === 0) {
       resultsContainer.innerHTML = `
@@ -199,17 +317,20 @@ async function doSearch() {
     });
 
   } catch (error) {
-    console.error("Error:", error);
+    console.error("❌ Error:", error);
     resultsContainer.innerHTML = `
       <div class="no-results">
         ❌ Error de conexión. ¿Servidor corriendo?
+        <br><small>${escapeHtml(error.message)}</small>
       </div>`;
   }
 }
 
+// ── Event Listeners ──
 btn.addEventListener("click", doSearch);
 input.addEventListener("keydown", e => { if (e.key === "Enter") doSearch(); });
 
+// Chips de búsqueda rápida
 const chips = document.querySelectorAll(".chip");
 if (chips.length > 0) {
   chips.forEach(chip => {
@@ -222,6 +343,7 @@ if (chips.length > 0) {
   });
 }
 
+// Cambio de idioma
 document.querySelectorAll(".lang-btn").forEach(lb => {
   lb.addEventListener("click", () => {
     document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
@@ -234,9 +356,11 @@ document.querySelectorAll(".lang-btn").forEach(lb => {
   });
 });
 
+// Inicialización
 const t0 = translations.es;
 input.placeholder = t0.placeholder;
 btn.textContent = t0.search;
 
-console.log("✅ Buscador semántico mejorado listo");
+console.log("✅ Buscador semántico Turtle listo");
 console.log("📝 Preguntas soportadas: gratuitos, museos, hoteles, restaurantes, platos típicos, parques, accesibilidad, transporte, eventos");
+console.log("🔗 Formato: Turtle/RDF → procesado en frontend sin JSON");
