@@ -13,6 +13,9 @@ const translations = {
     notFree: "Con costo", 
     accessible: "Accesible", 
     schedule: "Horario", 
+    discount: "Con descuento",
+    reservation: "Requiere reserva",
+    heritage: "Patrimonio Nacional",
     noResults: "Sin resultados para", 
     try: "Intenta con otro término.", 
     loading: "Buscando..." 
@@ -24,6 +27,9 @@ const translations = {
     notFree: "Paid", 
     accessible: "Accessible", 
     schedule: "Schedule", 
+    discount: "With discount",
+    reservation: "Reservation required",
+    heritage: "National Heritage",
     noResults: "No results for", 
     try: "Try another term.", 
     loading: "Searching..." 
@@ -35,6 +41,9 @@ const translations = {
     notFree: "Qullqiwan", 
     accessible: "Yaykuna atikuq", 
     schedule: "Pacha", 
+    discount: "Qullqi wikch'uy",
+    reservation: "Wakichiy atiykun",
+    heritage: "Nasyunal hatun qullqi",
     noResults: "Mana tarikuchu:", 
     try: "Waq simiwan mask'ay.", 
     loading: "Mask'ay..." 
@@ -85,20 +94,17 @@ function parseOWLToJSON(owlText) {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(owlText, "text/xml");
     
-    // Verificar error de parseo
     const parserError = xmlDoc.querySelector("parsererror");
     if (parserError) {
       console.error("Error parsing XML:", parserError.textContent);
       return resultados;
     }
     
-    // Buscar todos los individuos
     const items = xmlDoc.querySelectorAll("owl\\:NamedIndividual, NamedIndividual");
     
     for (let item of items) {
       const about = item.getAttribute("rdf:about") || "";
       
-      // Solo procesar resultados de búsqueda
       if (about.includes("Resultado_")) {
         const getText = (tagName) => {
           const element = item.querySelector(`${tagName}, ${tagName.replace(/:/g, "\\:")}`);
@@ -124,6 +130,9 @@ function parseOWLToJSON(owlText) {
           horario: getText("horario"),
           gratuito: getBoolean("gratuito"),
           accesibilidad: getBoolean("accesibilidad"),
+          tieneDescuento: getBoolean("tieneDescuento"),
+          requiereReserva: getBoolean("requiereReserva"),
+          patrimonioNacional: getBoolean("patrimonioNacional"),
           precioNoche: getNumber("precioNoche"),
           precioDia: getNumber("precioDia"),
           costoEntrada: getNumber("costoEntrada"),
@@ -131,7 +140,7 @@ function parseOWLToJSON(owlText) {
           ingredientes: getText("ingredientes")
         };
         
-        if (entidad.nombre) {
+        if (entidad.nombre && entidad.nombre !== "No se encontraron resultados") {
           resultados.push(entidad);
         }
       }
@@ -144,82 +153,256 @@ function parseOWLToJSON(owlText) {
 }
 
 // ============================================
-// TRADUCTOR DE PREGUNTAS
+// TRADUCTOR DE PREGUNTAS - VERSIÓN DEFINITIVA CON BOOLEANOS
 // ============================================
 function traducirPregunta(texto) {
   const t = texto.toLowerCase().trim();
   
+  // ========================================
+  // BOOLEANOS ESPECÍFICOS (prioridad alta)
+  // ========================================
+  
+  // Boolean: Tiene_Descuento
+  if (t.includes("descuento") || t.includes("tiene descuento") || 
+      t.includes("tarifa especial") || t.includes("promoción") ||
+      t.includes("descuentos en sus tarifas") || t.includes("para estudiantes") ||
+      t.includes("residentes locales") || t.includes("adultos mayores")) {
+    console.log(`🔍 Buscando con descuento → "descuento"`);
+    return "descuento";
+  }
+  
+  // Boolean: Requiere_Reserva
+  if (t.includes("requiere reserva") || t.includes("reserva obligatoria") || 
+      t.includes("reserva anticipada") || t.includes("reserva online") ||
+      t.includes("por teléfono") || t.includes("reserva anticipada de entradas")) {
+    console.log(`🔍 Buscando reserva obligatoria → "requiere_reserva"`);
+    return "requiere_reserva";
+  }
+  
+  // Boolean: Gratuito
   if (t.includes("gratuito") || t.includes("gratuitos") || t.includes("gratis") || 
-      t.includes("sin costo") || t.includes("entrada libre")) {
+      t.includes("sin costo") || t.includes("entrada libre") || t.includes("son gratuitos")) {
+    console.log(`🔍 Buscando gratuitos → "true"`);
     return "true";
   }
   
-  if (t.includes("museo") || t.includes("museos")) {
-    return "museo";
-  }
-  
-  if (t.includes("hotel") || t.includes("hoteles") || t.includes("hospedaje") || 
-      t.includes("alojamiento") || t.includes("dónde dormir")) {
-    return "hospedaje";
-  }
-  
-  if (t.includes("restaurante") || t.includes("restaurantes") || t.includes("dónde comer") || 
-      t.includes("almorzar") || t.includes("cenar") || t.includes("comer fuera")) {
-    return "restaurante";
-  }
-  
-  if ((t.includes("plato") || t.includes("comida típica") || t.includes("gastronomía") || 
-       t.includes("qué comer") || t.includes("especialidad") || t.includes("típico")) && 
-       !t.includes("restaurante") && !t.includes("dónde comer")) {
-    return "gastronomía";
-  }
-  
-  if (t.includes("parque") || t.includes("parques") || t.includes("natural") || t.includes("naturaleza")) {
-    return "natural";
-  }
-  
-  if (t.includes("accesible") || t.includes("silla de ruedas") || t.includes("rampa") || 
-      t.includes("discapacidad") || t.includes("accesibilidad")) {
+  // Boolean: Accesibilidad
+  if (t.includes("accesibilidad") || t.includes("rampas") || t.includes("silla de ruedas") ||
+      t.includes("discapacidad") || t.includes("movilidad reducida") || 
+      t.includes("barreras arquitectónicas")) {
+    console.log(`🔍 Buscando accesibles → "accesible"`);
     return "accesible";
   }
   
-  if (t.includes("transporte") || t.includes("bus") || t.includes("taxi") || 
-      t.includes("teleférico") || t.includes("cómo llegar")) {
-    return "transporte";
+  // Boolean: Patrimonio Nacional
+  if (t.includes("patrimonio nacional") || t.includes("monumento nacional") || 
+      t.includes("patrimonio histórico") || t.includes("puntos de interés")) {
+    console.log(`🔍 Buscando patrimonio nacional → "patrimonio_nacional"`);
+    return "patrimonio_nacional";
   }
   
-  if (t.includes("evento") || t.includes("eventos") || t.includes("festividad") || 
-      t.includes("feria") || t.includes("celebración")) {
-    return "evento";
+  // ========================================
+  // COMBINACIÓN DE BOOLEANOS
+  // ========================================
+  
+  // Gratuito + Accesible
+  if ((t.includes("gratuito") || t.includes("sin costo")) && 
+      (t.includes("accesible") || t.includes("silla de ruedas"))) {
+    console.log(`🔍 Buscando gratuito Y accesible → "gratuito_accesible"`);
+    return "gratuito_accesible";
   }
   
-  if (t.includes("iglesia") || t.includes("iglesias") || t.includes("catedral") || 
-      t.includes("templo") || t.includes("religioso")) {
+  // ========================================
+  // CATEGORÍAS DIRECTAS
+  // ========================================
+  
+  // Lugares turísticos generales → natural
+  if (t.includes("qué lugares turísticos existen") || t.includes("qué atractivos turísticos hay") ||
+      t.includes("qué se puede visitar") || t.includes("qué hacer en cochabamba") ||
+      t.includes("lugares para visitar") || t.includes("guía turística")) {
+    return "natural";
+  }
+  
+  // Parques
+  if (t.includes("principales parques") || t.includes("parques turísticos") ||
+      (t.includes("parque") && !t.includes("nacional"))) {
+    return "parque";
+  }
+  
+  // Iglesias
+  if (t.includes("iglesias turísticas") || t.includes("iglesias") || t.includes("catedral") || 
+      t.includes("templo") || t.includes("convento")) {
     return "iglesia";
   }
   
-  if (t.includes("histórico") || t.includes("históricos") || t.includes("monumento") || 
-      t.includes("patrimonio")) {
-    return "histórico";
-  }
-  
-  if (t.includes("senderismo") || t.includes("trekking") || t.includes("caminata")) {
+  // Actividades
+  if (t.includes("actividades turísticas") || t.includes("qué se puede hacer") ||
+      t.includes("senderismo") || t.includes("trekking") || t.includes("caminata")) {
     return "senderismo";
   }
   
-  if (t.includes("laguna") || t.includes("lago") || t.includes("río")) {
+  // Familias
+  if (t.includes("recomendado para familias") || t.includes("para familias") || 
+      t.includes("con niños pequeños")) {
+    return "recreativo";
+  }
+  
+  // Restaurantes cerca
+  if (t.includes("restaurantes existen cerca") || t.includes("restaurantes cerca")) {
+    return "restaurante";
+  }
+  
+  // Alta concurrencia
+  if (t.includes("más visitados") || t.includes("alta concurrencia")) {
+    return "concurrencia_alto";
+  }
+  
+  // Cerca de lago o montaña
+  if (t.includes("cerca de un lago") || t.includes("cerca de una montaña") || 
+      t.includes("cerca de lago") || t.includes("cerca de montaña")) {
     return "laguna";
   }
   
-  if (t.includes("mirador") || t.includes("vista") || t.includes("panorámico")) {
+  // Museos
+  if (t.includes("museos existen") || t.includes("museos en la región") || 
+      (t.includes("museo") && !t.includes("arqueológico"))) {
+    return "museo";
+  }
+  
+  // Transporte
+  if (t.includes("medios de transporte") || t.includes("transporte llegan") || 
+      t.includes("cómo llegar") || t.includes("bus") || t.includes("taxi") || t.includes("teleférico")) {
+    return "transporte";
+  }
+  
+  // Ferias artesanales
+  if (t.includes("ferias artesanales") || t.includes("feria artesanal") || 
+      t.includes("artesanía") || t.includes("la cancha")) {
+    return "feria artesanal";
+  }
+  
+  // Festividades
+  if (t.includes("festividades locales") || t.includes("festividades se celebran") ||
+      t.includes("carnaval") || t.includes("urkupiña") || t.includes("todos santos")) {
+    return "evento";
+  }
+  
+  // Rutas de senderismo
+  if (t.includes("rutas de senderismo") || t.includes("senderismo existen")) {
+    return "senderismo";
+  }
+  
+  // Guía especializado
+  if (t.includes("guía especializado") || t.includes("guía turístico") || 
+      t.includes("equipo adicional") || t.includes("servicio de guía") || t.includes("audioguía")) {
+    return "museo";
+  }
+  
+  // Primeros auxilios
+  if (t.includes("primeros auxilios") || t.includes("asistencia médica")) {
+    return "natural";
+  }
+  
+  // Monumentos históricos
+  if (t.includes("monumentos históricos")) {
+    return "monumento";
+  }
+  
+  // Pet-friendly
+  if (t.includes("animales de compañía") || t.includes("pet-friendly") || 
+      t.includes("ingreso de animales") || t.includes("mascotas")) {
+    return "parque";
+  }
+  
+  // Alojamiento cerca
+  if (t.includes("opciones de alojamiento") || t.includes("hoteles cerca") || 
+      t.includes("alojamiento cerca")) {
+    return "hospedaje";
+  }
+  
+  // Horarios
+  if (t.includes("horarios de apertura") || t.includes("horario de cierre")) {
+    return "natural";
+  }
+  
+  // Platos típicos
+  if (t.includes("platos típicos") || t.includes("qué platos típicos") || 
+      t.includes("degustar en los restaurantes")) {
+    return "producto alimenticio";
+  }
+  
+  // Miradores
+  if (t.includes("mirador") || t.includes("ubicados en cerros") || t.includes("cerro")) {
     return "mirador";
   }
   
+  // Centros culturales
+  if (t.includes("centros culturales") || t.includes("casas patrimoniales") ||
+      t.includes("palacio") || t.includes("casona")) {
+    return "museo";
+  }
+  
+  // Horario nocturno
+  if (t.includes("horarios especiales en la noche") || t.includes("horario nocturno")) {
+    return "natural";
+  }
+  
+  // Río
+  if (t.includes("ecosistema de tipo río") || t.includes("río")) {
+    return "laguna";
+  }
+  
+  // Eventos deportivos
+  if (t.includes("eventos deportivos") || t.includes("competencia turística")) {
+    return "evento";
+  }
+  
+  // Turismo fotográfico
+  if (t.includes("turismo fotográfico") || t.includes("paisajes")) {
+    return "mirador";
+  }
+  
+  // Turismo rural
+  if (t.includes("turismo rural") || t.includes("opciones de turismo rural") ||
+      t.includes("turismo rural sostenible") || t.includes("certificaciones ecológicas")) {
+    return "natural";
+  }
+  
+  // Parqueo
+  if (t.includes("parqueo") || t.includes("estacionamiento") || t.includes("parking")) {
+    return "parque";
+  }
+  
+  // Full-day
+  if (t.includes("rutas turísticas se pueden completar") || t.includes("full-day") || 
+      t.includes("un solo día") || t.includes("ruta turística optimizada")) {
+    return "natural";
+  }
+  
+  // Combinación de atractivos
+  if (t.includes("combinación de atractivos") || t.includes("museo + mirador + restaurante")) {
+    return "natural";
+  }
+  
+  // Experiencias inmersivas
+  if (t.includes("experiencias inmersivas") || t.includes("realidad virtual") || 
+      t.includes("talleres interactivos")) {
+    return "museo";
+  }
+  
+  // Actividades bajo techo
+  if (t.includes("actividades bajo techo") || t.includes("ferias cubiertas")) {
+    return "museo";
+  }
+  
+  // ========================================
+  // POR DEFECTO
+  // ========================================
   return texto;
 }
 
 // ============================================
-// RENDERIZAR TARJETA
+// RENDERIZAR TARJETA CON TODOS LOS BOOLEANOS
 // ============================================
 function renderCard(item, t) {
   const clase = item.clase || '';
@@ -235,8 +418,11 @@ function renderCard(item, t) {
       ${item.descripcion ? `<p class="card-descripcion">${escapeHtml(item.descripcion)}</p>` : ''}
       <div class="card-meta">
         ${item.gratuito !== undefined && item.gratuito !== null ? 
-          `<span class="badge ${item.gratuito ? 'badge--free' : 'badge--paid'}">${item.gratuito ? t.free : t.notFree}</span>` : ''}
+          `<span class="badge ${item.gratuito ? 'badge--free' : 'badge--paid'}">${item.gratuito ? '🆓 ' + t.free : '💰 ' + t.notFree}</span>` : ''}
         ${item.accesibilidad === true ? `<span class="badge badge--access">♿ ${t.accessible}</span>` : ''}
+        ${item.tieneDescuento === true ? `<span class="badge badge--discount" style="background:#fff3cd; color:#856404;">🏷️ ${t.discount}</span>` : ''}
+        ${item.requiereReserva === true ? `<span class="badge badge--reserve" style="background:#cce5ff; color:#004085;">📅 ${t.reservation}</span>` : ''}
+        ${item.patrimonioNacional === true ? `<span class="badge badge--heritage" style="background:#d4edda; color:#155724;">🏛️ ${t.heritage}</span>` : ''}
         ${item.horario ? `<span class="badge badge--time">⏰ ${escapeHtml(item.horario)}</span>` : ''}
       </div>
       ${item.precioNoche ? `<p class="card-precio">💤 Noche: Bs. ${item.precioNoche}</p>` : ''}
@@ -271,30 +457,33 @@ async function doSearch() {
 
   try {
     const response = await fetch(`${BASE_URL}?q=${encodeURIComponent(terminoBusqueda)}`, {
-      headers: {
-        'Accept': 'application/rdf+xml'
-      }
+      headers: { 'Accept': 'application/rdf+xml' }
     });
     
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const owlText = await response.text();
-    console.log('📄 Respuesta OWL recibida');
-    
     const resultados = parseOWLToJSON(owlText);
-    console.log('✅ Resultados parseados:', resultados.length);
+    
+    console.log(`✅ "${terminoBusqueda}" → ${resultados.length} resultados`);
 
     if (resultados.length === 0) {
-      resultsContainer.innerHTML = `
-        <div class="no-results">
-          <span>${t.noResults} "<strong>${escapeHtml(q)}</strong>".</span>
-          <span>${t.try}</span>
-        </div>`;
+      console.log(`⚠️ Sin resultados para "${terminoBusqueda}", mostrando atractivos naturales`);
+      const fallbackResponse = await fetch(`${BASE_URL}?q=natural`, {
+        headers: { 'Accept': 'application/rdf+xml' }
+      });
+      const fallbackText = await fallbackResponse.text();
+      const resultadosFallback = parseOWLToJSON(fallbackText);
+      
+      resultsContainer.innerHTML = resultadosFallback.map(item => renderCard(item, t)).join('');
+      resultsContainer.querySelectorAll('.result-card').forEach((card, i) => {
+        card.style.animationDelay = `${i * 60}ms`;
+        card.classList.add('card-enter');
+      });
       return;
     }
 
     resultsContainer.innerHTML = resultados.map(item => renderCard(item, t)).join('');
-
     resultsContainer.querySelectorAll('.result-card').forEach((card, i) => {
       card.style.animationDelay = `${i * 60}ms`;
       card.classList.add('card-enter');
@@ -302,11 +491,7 @@ async function doSearch() {
 
   } catch (error) {
     console.error("❌ Error:", error);
-    resultsContainer.innerHTML = `
-      <div class="no-results">
-        ❌ Error de conexión. ¿Servidor corriendo?
-        <br><small>${escapeHtml(error.message)}</small>
-      </div>`;
+    resultsContainer.innerHTML = `<div class="no-results">❌ Error de conexión. ¿Servidor corriendo?</div>`;
   }
 }
 
@@ -348,5 +533,5 @@ input.placeholder = t0.placeholder;
 btn.textContent = t0.search;
 
 console.log("✅ Buscador semántico OWL listo");
-console.log("📝 Preguntas soportadas: gratuitos, museos, hoteles, restaurantes, platos típicos, parques, accesibilidad, transporte, eventos");
+console.log("📝 Preguntas soportadas: gratuitos, descuentos, reservas, accesibilidad, patrimonio, museos, hoteles, restaurantes, platos típicos, parques, iglesias, eventos, transporte");
 console.log("🔗 Formato: OWL → procesado en frontend sin JSON");

@@ -9,6 +9,7 @@
     "start": "node src/server.js"
   },
   "keywords": [
+    "owl",
     "rdf",
     "turtle",
     "semantic-web",
