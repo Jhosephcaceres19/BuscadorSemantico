@@ -1,0 +1,2138 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#"
+     xml:base="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#estaCercaDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#estaCercaDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ofreceEvento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ofreceEvento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ofreceGastronomia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ofreceGastronomia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ofreceHospedaje -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ofreceHospedaje">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#seLlegaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#seLlegaPor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#seRealizaEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#seRealizaEn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#tieneAtractivo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#tieneAtractivo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#tieneEstablecimiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#tieneEstablecimiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ubicadoEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#ubicadoEn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Accesibilidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Accesibilidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Actividades -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Actividades">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Capacidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Capacidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Costo_Aproximado -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Costo_Aproximado">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Costo_Entrada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Costo_Entrada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cultura_Origen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cultura_Origen">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Descripcion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Descripcion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Disponible -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Disponible">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Epoca -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Epoca">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Es_Tipico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Es_Tipico">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Estado_Conservacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Estado_Conservacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Fecha_Fin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Fecha_Fin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Fecha_Inicio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Fecha_Inicio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Frecuencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Frecuencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Grado_Dificultad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Grado_Dificultad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gratuito -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gratuito">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Apertura -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Apertura">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Atencion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Atencion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Cierra -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Cierra">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Especial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Especial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Servicio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Horario_Servicio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Incluye_Servicios -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Incluye_Servicios">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ingredientes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ingredientes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Nivel_Concurrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Nivel_Concurrencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Patrimonio_Nacional -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Patrimonio_Nacional">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Precio_Dia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Precio_Dia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Precio_Noche -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Precio_Noche">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Requiere_Reserva -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Requiere_Reserva">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicios -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicios">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tiene_Descuento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tiene_Descuento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Atractivo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Atractivo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Ecosistema -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Ecosistema">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Establecimiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Establecimiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Evento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Evento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Hospedaje -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Hospedaje">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Patrimonio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Patrimonio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Producto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Producto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Recreacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Recreacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Transporte -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tipo_Transporte">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ubicacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ubicacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Turistico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gastronomía"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gastronomía"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gastronomía -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gastronomía">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gastronomía"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entidad_Turistica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Servicio_Turistico"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Aguas_Termales_de_Liriuni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Aguas_Termales_de_Liriuni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Descripcion>Pozas naturales de aguas medicinales que brotan de la montaña con una vista privilegiada del valle .</Descripcion>
+        <Horario_Apertura>07:00</Horario_Apertura>
+        <Horario_Cierra>16:00</Horario_Cierra>
+        <Nombre>Aguas Termales de Liriuni</Nombre>
+        <Ubicacion>Quillacollo</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Alojamiento_Rural -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Alojamiento_Rural">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Áreas Verdes, Camping</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</Precio_Noche>
+        <Tipo_Hospedaje>Alojamiento Rural</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bosque_de_los_PInos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bosque_de_los_PInos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Descripcion>Un extenso sendero de pinos antiguos que crean un microclima místico en uno de los pueblos más coloniales de Bolivia.</Descripcion>
+        <Horario_Apertura>06:00</Horario_Apertura>
+        <Horario_Cierra>18:00</Horario_Cierra>
+        <Nombre>Bosque de los pinos</Nombre>
+        <Ubicacion>Totora</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Buffet_Hotel_Cochabamba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Buffet_Hotel_Cochabamba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <Horario_Atencion>07:00 - 22:00</Horario_Atencion>
+        <Servicios>Piscina, Buffet internacional</Servicios>
+        <Tipo_Establecimiento>Restaurante de Lujo</Tipo_Establecimiento>
+        <Ubicacion>Recoleta</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Interdepartamental -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Interdepartamental">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.0</Costo_Aproximado>
+        <Horario_Servicio>07:00 - 23:00</Horario_Servicio>
+        <Ruta>Terminal - Santa Cruz/La Paz</Ruta>
+        <Tipo_Transporte>Bus Interdepartamental</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Turístico_-City_Tour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Turístico_-City_Tour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</Costo_Aproximado>
+        <Horario_Servicio>Fines de semana</Horario_Servicio>
+        <Ruta>Circuito Histórico / Miradores</Ruta>
+        <Tipo_Transporte>Bus Turístico (City Tour)</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Casona_Santiváñez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Casona_Santiváñez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Colonial/Repub.</Epoca>
+        <Nombre>Casona Santiváñez</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tipo_Patrimonio>Arquitectura Civil</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Casona_de_Mayorazgo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Casona_de_Mayorazgo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Colonial</Epoca>
+        <Nombre>Casona de Mayorazgo</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tipo_Patrimonio>Arquitectura Civil</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Catedral_Metropolitana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Catedral_Metropolitana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <ofreceEvento rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Todos_Santos"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Turístico_-City_Tour"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Taxi_Trufi_Línea_3"/>
+        <Epoca>Colonial</Epoca>
+        <Nivel_Concurrencia>Alto</Nivel_Concurrencia>
+        <Nombre>Catedral Metropolitana</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Tiene_Descuento>
+        <Tipo_Patrimonio>Arquitectura Religiosa</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cañadón_de_la_Angostura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cañadón_de_la_Angostura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Descripcion>Formaciones geológicas estrechas donde el río serpentea entre paredes de roca, ideal para fotografía de aventura.</Descripcion>
+        <Horario_Apertura>06:00</Horario_Apertura>
+        <Horario_Cierra>18:00</Horario_Cierra>
+        <Nombre>Cañadón de la Angostura</Nombre>
+        <Ubicacion>Carretera al Valle Alto</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Centro_Simón_I._Patiño -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Centro_Simón_I._Patiño">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Nombre>Centro &quot;Simón I. Patiño&quot;</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Requiere_Reserva>
+        <Tipo_Atractivo>Natural / Paisajístico / Ecológico</Tipo_Atractivo>
+        <Ubicacion>Cercado</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cerro_San_Pedro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cerro_San_Pedro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Actividades>Senderismo, fotografía</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Cerro San Pedro</Nombre>
+        <Tipo_Ecosistema>Cerro</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cerro_de_Cota -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cerro_de_Cota">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Actividades>Caminata, turismo religioso</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Cerro de Cota</Nombre>
+        <Tipo_Ecosistema>Cerro</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Chicha_Cochabambina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Chicha_Cochabambina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Bebida Tradicional</Es_Tipico>
+        <Ingredientes>Maíz fermentado, agua</Ingredientes>
+        <Tipo_Producto>Chicha Cochabambina</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Chicharrón_Cochabambino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Chicharrón_Cochabambino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Criolla / Tradicional</Es_Tipico>
+        <Ingredientes>Carne de cerdo, mote de maíz, papa, llajua</Ingredientes>
+        <Tipo_Producto>Chicharrón Cochabambino</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cine_Center_Cochabamba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cine_Center_Cochabamba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Moto_Taxi"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Horario_Especial>10:00 - 00:00</Horario_Especial>
+        <Nombre>Cine Center Cochabamba</Nombre>
+        <Tipo_Recreacion>Entretenimiento / Cine</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Complejo_Arqueológico_de_Pocona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Complejo_Arqueológico_de_Pocona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Inca</Cultura_Origen>
+        <Estado_Conservacion>Regular</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Complejo Arqueológico de Pocona</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Convento_Santa_Teresa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Convento_Santa_Teresa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Colonial</Epoca>
+        <Nivel_Concurrencia>Medio</Nivel_Concurrencia>
+        <Nombre>Convento Santa Teresa</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Tiene_Descuento>
+        <Tipo_Patrimonio>Museo Religioso</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Corani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Corani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Corani</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Requiere_Reserva>
+        <Tipo_Atractivo>Natural/Paisajistico</Tipo_Atractivo>
+        <Ubicacion>Colomi</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Corso_de_Corsos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Corso_de_Corsos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <seRealizaEn rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Paseo_del_Prado"/>
+        <Fecha_Fin>Sábado Tentación</Fecha_Fin>
+        <Fecha_Inicio>Sábado Tentación</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Carnaval</Tipo_Evento>
+        <Ubicacion>El Prado / Heroínas</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cristo_de_la_Concordia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cristo_de_la_Concordia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Teleférico"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Horario_Especial>09:00 - 18:00</Horario_Especial>
+        <Nivel_Concurrencia>Alto</Nivel_Concurrencia>
+        <Nombre>Cristo de la Concordia</Nombre>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Tiene_Descuento>
+        <Tipo_Recreacion>Mirador Religioso</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Don_de_Fer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Don_de_Fer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Lapping"/>
+        <Horario_Atencion>18:00 - 00:00</Horario_Atencion>
+        <Servicios>Delivery, Bebidas</Servicios>
+        <Tipo_Establecimiento>Parrilada</Tipo_Establecimiento>
+        <Ubicacion>Av. América</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Día_del_Peatón -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Día_del_Peatón">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>1er Domingo Sept.</Fecha_Fin>
+        <Fecha_Inicio>1er Domingo Sept.</Fecha_Inicio>
+        <Tipo_Evento>Medioambiental</Tipo_Evento>
+        <Ubicacion>Toda la ciudad</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#El_Palacio_del_Silpancho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#El_Palacio_del_Silpancho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Silpancho"/>
+        <Horario_Atencion>11:00 - 15:00</Horario_Atencion>
+        <Servicios>Atencion Rapida</Servicios>
+        <Tipo_Establecimiento>Especialidad (Silpancho)</Tipo_Establecimiento>
+        <Ubicacion>Calle Baptista</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entrada_Universitaria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Entrada_Universitaria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>28 de Octubre</Fecha_Fin>
+        <Fecha_Inicio>28 de Octubre</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Folclórico / Estudiantil</Tipo_Evento>
+        <Ubicacion>Centro de la ciudad</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#FEXCO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#FEXCO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <seRealizaEn rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Alalay"/>
+        <Fecha_Fin>05 de Mayo</Fecha_Fin>
+        <Fecha_Inicio>25 de Abril</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Feria Comercial</Tipo_Evento>
+        <Ubicacion>Recinto Ferial Alalay</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_Artesanal_La_Cancha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_Artesanal_La_Cancha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>Domingo</Fecha_Fin>
+        <Fecha_Inicio>Lunes</Fecha_Inicio>
+        <Frecuencia>Diario</Frecuencia>
+        <Nombre>Feria Artesanal La Cancha</Nombre>
+        <Tipo_Evento>Feria Artesanal</Tipo_Evento>
+        <Ubicacion>Mercado La Cancha</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_de_la_Ensalada -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_de_la_Ensalada">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>21 de Septiembre</Fecha_Fin>
+        <Fecha_Inicio>21 de Septiembre</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Gastronómico</Tipo_Evento>
+        <Ubicacion>Parque de la Familia</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_del_Pique_Macho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_del_Pique_Macho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>15 de Junio</Fecha_Fin>
+        <Fecha_Inicio>15 de Junio</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Gastronómico</Tipo_Evento>
+        <Ubicacion>Plaza de las Banderas</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Festividad_Santa_Vera_Cruz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Festividad_Santa_Vera_Cruz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>03 de Mayo</Fecha_Fin>
+        <Fecha_Inicio>01 de Mayo</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Religioso / Agrícola</Tipo_Evento>
+        <Ubicacion>Km 7 Av. Petrolera</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Garapiña -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Garapiña">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Bebida Tradicional</Es_Tipico>
+        <Ingredientes>Chicha, helado de canela, coco rallado, frutillas</Ingredientes>
+        <Tipo_Producto>Garapiña</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Globos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Globos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pique_Macho"/>
+        <Horario_Atencion>08:00 - 21:00</Horario_Atencion>
+        <Servicios>Aire acondicionado, Juegos</Servicios>
+        <Tipo_Establecimiento>Pastelería / Heladería</Tipo_Establecimiento>
+        <Ubicacion>El Prado</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gran_Hotel_Cochabamba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Gran_Hotel_Cochabamba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Gran Hotel Cochabamba</Nombre>
+        <Ubicacion>Plaza Ubaldo Anze</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Heroínas_de_la_Coronilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Heroínas_de_la_Coronilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Independencia</Epoca>
+        <Nombre>Heroínas de la Coronilla</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tipo_Patrimonio>Monumento Histórico</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_4_Estrellas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_4_Estrellas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Spa, Jacuzzi, Parqueo</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">550.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">460.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel 4 Estrellas</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_5_Estrellas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_5_Estrellas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Piscina, Gym, Wifi</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">750.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel 5 Estrellas</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Americana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Americana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Americana</Nombre>
+        <Ubicacion>Av. Heroinas</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Aranjuez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Aranjuez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Aranjuez</Nombre>
+        <Ubicacion>Barrio Recoleta</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Boutique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Boutique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Jardines, Desayuno</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">580.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">480.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel Boutique</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Básico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Básico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Baño Privado, Wifi</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel Básico</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Camino_Plaza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Camino_Plaza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Camino Plaza</Nombre>
+        <Ubicacion>Av. Oquendo</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Cochabamba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Cochabamba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Cochabamba</Nombre>
+        <Ubicacion>Av. Pando N° 1271</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Diplomat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Diplomat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Diplomat</Nombre>
+        <Ubicacion>Av. Ballivian</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Económico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Económico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Servicios Básicos</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">140.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel Económico</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Ejecutivo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Ejecutivo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Sala de Juntas, Wifi</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">550.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">450.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel Ejecutivo</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Ejecutivo_5_estrellas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Ejecutivo_5_estrellas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Disponible>
+        <Incluye_Servicios>Traslado Aeropuerto</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">420.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">350.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel Ejecutivo</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Luxor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Luxor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Luxor</Nombre>
+        <Ubicacion>Zona Norte</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Pairumani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Pairumani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>07:00 - 22:00</Horario_Atencion>
+        <Nombre>Hotel Pairumani</Nombre>
+        <Ubicacion>Zona Pairumani</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Regina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Regina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>6:00 - 23:59</Horario_Atencion>
+        <Nombre>Hotel Regina</Nombre>
+        <Ubicacion>Calle España</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Tambo_Real -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Tambo_Real">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Horario_Atencion>24 horas</Horario_Atencion>
+        <Nombre>Hotel Tambo Real</Nombre>
+        <Ubicacion>Zona Central</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Turístico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_Turístico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>TV Cable, Ventilador</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">280.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">220.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel Turístico</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_de_Lujo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hotel_de_Lujo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Hospedaje"/>
+        <Disponible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Disponible>
+        <Incluye_Servicios>Sauna, Desayuno Buffet</Incluye_Servicios>
+        <Precio_Dia rdf:datatype="http://www.w3.org/2001/XMLSchema#float">700.0</Precio_Dia>
+        <Precio_Noche rdf:datatype="http://www.w3.org/2001/XMLSchema#float">550.0</Precio_Noche>
+        <Tipo_Hospedaje>Hotel de Lujo</Tipo_Hospedaje>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Incachaca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Incachaca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Incachaca</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Requiere_Reserva>
+        <Tipo_Atractivo>Natural / Aventura</Tipo_Atractivo>
+        <Ubicacion>Colomi</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Jardín_Botánico_Martín_Cárdenas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Jardín_Botánico_Martín_Cárdenas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Horario_Especial>09:00 - 17:00</Horario_Especial>
+        <Nombre>Jardín Botánico Martín Cárdenas</Nombre>
+        <Tipo_Recreacion>Naturaleza/Paseo</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#La_Angostura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#La_Angostura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Minibús_-_Línea_101"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi"/>
+        <Actividades>Paseo en bote, pesca, gastronomía</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>La Angostura</Nombre>
+        <Tipo_Ecosistema>Lago / Represa</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#La_Casa_del_Campo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#La_Casa_del_Campo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Lapping"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Silpancho"/>
+        <Horario_Atencion>11:00 - 23:00</Horario_Atencion>
+        <Servicios>Música en vivo, Parqueo</Servicios>
+        <Tipo_Establecimiento>Restaurante Tradicional</Tipo_Establecimiento>
+        <Ubicacion>Pasaje Boulevard</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Alalay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Alalay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <ofreceEvento rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#FEXCO"/>
+        <ofreceEvento rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Virgen_de_Urkupiña"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi"/>
+        <Actividades>Ciclismo, caminata, observación de aves</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nivel_Concurrencia>Medio</Nivel_Concurrencia>
+        <Nombre>Laguna Alalay</Nombre>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Tiene_Descuento>
+        <Tipo_Ecosistema>Laguna / Humedal</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Angostura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Angostura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Laguna Angostura</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Requiere_Reserva>
+        <Tipo_Atractivo>Natural / Recreativo</Tipo_Atractivo>
+        <Ubicacion>Valle Alto</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Corani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Laguna_Corani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Interdepartamental"/>
+        <Actividades>Pesca, paseo, fotografía</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Laguna Corani</Nombre>
+        <Tipo_Ecosistema>Laguna</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Lapping -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Lapping">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Criolla / Asado</Es_Tipico>
+        <Ingredientes>Pecho de res asado, habas tiernas, choclo, papa, ensalada</Ingredientes>
+        <Tipo_Producto>Lapping</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Martínez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Martínez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <Horario_Atencion>08:30 - 13:00</Horario_Atencion>
+        <Servicios>Consumo en el lugar</Servicios>
+        <Tipo_Establecimiento>Salteñería</Tipo_Establecimiento>
+        <Ubicacion>Varias sucursales</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Mercado_25_de_Mayo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Mercado_25_de_Mayo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceEvento rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Feria_Artesanal_La_Cancha"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Sopa_de_Maní"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Trancapecho"/>
+        <Horario_Atencion>07:00 - 15:00</Horario_Atencion>
+        <Servicios>Precios económicos</Servicios>
+        <Tipo_Establecimiento>Mercado Popular</Tipo_Establecimiento>
+        <Ubicacion>Calle 25 de Mayo</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Micro_Línea_H -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Micro_Línea_H">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</Costo_Aproximado>
+        <Horario_Servicio>06:00 - 21:00</Horario_Servicio>
+        <Ruta>Zona Sur - Cruce Taquiña</Ruta>
+        <Tipo_Transporte>Micro (Línea H)</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Minibús_-_Línea_101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Minibús_-_Línea_101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</Costo_Aproximado>
+        <Horario_Servicio>05:30 - 22:30</Horario_Servicio>
+        <Ruta>Plaza Principal - Sacaba</Ruta>
+        <Tipo_Transporte>Minibús (Línea 101)</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Miraflores_Lugar_de_Piques -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Miraflores_Lugar_de_Piques">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pique_Macho"/>
+        <Horario_Atencion>11:30 - 22:00</Horario_Atencion>
+        <Servicios>Terraza, Wi-Fi</Servicios>
+        <Tipo_Establecimiento>Restaurante Familiar</Tipo_Establecimiento>
+        <Ubicacion>Av. Tarija</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Mocochinchi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Mocochinchi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Bebida Tradicional</Es_Tipico>
+        <Ingredientes>Durazno deshidratado, agua, canela, clavo de olor, azúcar</Ingredientes>
+        <Tipo_Producto>Mocochinchi</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Moto_Taxi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Moto_Taxi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</Costo_Aproximado>
+        <Horario_Servicio>7:00 - 19:00</Horario_Servicio>
+        <Ruta>Centro - Zonas Periféricas</Ruta>
+        <Tipo_Transporte>Moto Taxi</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Muela_del_Diablo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Muela_del_Diablo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <estaCercaDe rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Cerro_de_Cota"/>
+        <Descripcion>Formación rocosa puntiaguda que domina el paisaje del valle, accesible tras una caminata de intensidad media.</Descripcion>
+        <Horario_Apertura>05:00</Horario_Apertura>
+        <Horario_Cierra>17:00</Horario_Cierra>
+        <Nombre>Muela del diablo</Nombre>
+        <Ubicacion>Tiquipaya</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_Arqueológico_UMSS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_Arqueológico_UMSS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <estaCercaDe rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Mercado_25_de_Mayo"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Micro_Línea_H"/>
+        <Epoca>Prehispánica/Colonial</Epoca>
+        <Nivel_Concurrencia>Medio</Nivel_Concurrencia>
+        <Nombre>Museo Arqueológico UMSS</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Tiene_Descuento>
+        <Tipo_Patrimonio>Museistico</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_Arqueólogico_de_Mizque -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_Arqueólogico_de_Mizque">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Descripcion>Contiene piezas únicas de las culturas prehispánicas del valle, incluyendo textiles y cerámicas de la cultura Omereque.</Descripcion>
+        <Horario_Apertura>09:00</Horario_Apertura>
+        <Horario_Cierra>17:30</Horario_Cierra>
+        <Nombre>Museo_Arqueológico_de_Mizque</Nombre>
+        <Ubicacion>Mizque</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_convento_Santa_Teresa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_convento_Santa_Teresa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Nombre>Museo Convento Santa Teresa</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Requiere_Reserva>
+        <Tipo_Atractivo>Cultural / 
+Religioso / 
+Mirador</Tipo_Atractivo>
+        <Ubicacion>Cercado</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_de_Historia_Natural -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Museo_de_Historia_Natural">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Republicana</Epoca>
+        <Nombre>Museo de Historia Natural</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tipo_Patrimonio>Científico/Cultural</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Navidad_en_el_Prado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Navidad_en_el_Prado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <seRealizaEn rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Paseo_del_Prado"/>
+        <Fecha_Fin>06 de Enero</Fecha_Fin>
+        <Fecha_Inicio>01 de Diciembre</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Festivo / Luce</Tipo_Evento>
+        <Ubicacion>Paseo del Prado</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pairumani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pairumani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Actividades>Camping, caminata, picnic</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Nombre>Pairumani</Nombre>
+        <Tipo_Ecosistema>Valle / Parque ecológico</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Palacio_Portales -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Palacio_Portales">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Turístico_-City_Tour"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi"/>
+        <Epoca>Republicana</Epoca>
+        <Nivel_Concurrencia>Alto</Nivel_Concurrencia>
+        <Nombre>Palacio Portales</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Tiene_Descuento>
+        <Tipo_Patrimonio>Arquitectónico</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pan_de_Toco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pan_de_Toco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Panadería Tradicional</Es_Tipico>
+        <Ingredientes>Harina de trigo, manteca, levadura, sal</Ingredientes>
+        <Tipo_Producto>Pan de Toco</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Cretácico_de_Sacaba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Cretácico_de_Sacaba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <Descripcion>Parque paleontológico que exhibe huellas de dinosaurios sobre una pared rocosa vertical, considerado uno de los registros más importantes de Bolivia</Descripcion>
+        <Horario_Apertura>09:30</Horario_Apertura>
+        <Horario_Cierra>17:30</Horario_Cierra>
+        <Nombre>Parque Cretácico de Sacaba</Nombre>
+        <Ubicacion>Sacaba</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Ecoturístico_Toro_Toro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Ecoturístico_Toro_Toro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Interdepartamental"/>
+        <Actividades>Espeleología, trekking, turismo científico</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Parque Ecoturístico Toro Toro</Nombre>
+        <Tipo_Ecosistema>Parque / Formación geológica</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Kanata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Kanata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <estaCercaDe rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Restaurante_Tunari"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Horario_Especial>09:00 - 18:00</Horario_Especial>
+        <Nombre>Parque Kanata</Nombre>
+        <Tipo_Recreacion>Recreación Familiar</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Mariscal_Santa_Cruz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Mariscal_Santa_Cruz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Micro_Línea_H"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Minibús_-_Línea_101"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Horario_Especial>fin de semana</Horario_Especial>
+        <Nombre>Parque Mariscal Santa Cruz</Nombre>
+        <Tipo_Recreacion>Acuático / Deportivo</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Nacional_Torotoro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Nacional_Torotoro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Nombre>Parque Nacional Torotoro</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Requiere_Reserva>
+        <Tipo_Atractivo>Natural / 
+Paleontológico 
+/ Aventura</Tipo_Atractivo>
+        <Ubicacion>ToroToro</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Nacional_Tunari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Nacional_Tunari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Interdepartamental"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi"/>
+        <Actividades>Senderismo, trekking, camping</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Nivel_Concurrencia>Medio</Nivel_Concurrencia>
+        <Nombre>Parque Nacional Tunari</Nombre>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Tiene_Descuento>
+        <Tipo_Ecosistema>Montaña / Parque</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_de_Educación_Vial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_de_Educación_Vial">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <estaCercaDe rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Picantería_Doña_Rosa"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Horario_Especial>Martes a Domingo</Horario_Especial>
+        <Nombre>Parque de Educación Vial</Nombre>
+        <Tipo_Recreacion>Infantil / Educativo</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_de_la_familia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_de_la_familia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <Accesibilidad rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Accesibilidad>
+        <Costo_Entrada rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</Costo_Entrada>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Nombre>Parque de la familia</Nombre>
+        <Requiere_Reserva rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Requiere_Reserva>
+        <Tipo_Atractivo>Recreativo / Urbano</Tipo_Atractivo>
+        <Ubicacion>Cercado</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Paseo_del_Prado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Paseo_del_Prado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <estaCercaDe rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Globos"/>
+        <ofreceEvento rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Navidad_en_el_Prado"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Micro_Línea_H"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Taxi_Trufi_Línea_3"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Horario_Especial>24 Horas</Horario_Especial>
+        <Nombre>Paseo del Prado</Nombre>
+        <Tipo_Recreacion>Urbano / Caminata</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Picantería_Doña_Rosa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Picantería_Doña_Rosa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <ofreceGastronomia rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Chicharrón_Cochabambino"/>
+        <Horario_Atencion>12:00 - 16:00</Horario_Atencion>
+        <Servicios>Comida a leña</Servicios>
+        <Tipo_Establecimiento>Picantería Popular</Tipo_Establecimiento>
+        <Ubicacion>Zona Muyurina</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pique_Macho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pique_Macho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Criolla / Típica</Es_Tipico>
+        <Ingredientes>Carne de res, salchichas, papas fritas, cebolla, locoto, huevo duro</Ingredientes>
+        <Tipo_Producto>Pique Macho</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pozas_de_chilimarca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pozas_de_chilimarca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <tieneAtractivo rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Parque_Nacional_Tunari"/>
+        <Descripcion>Formaciones naturales de agua cristalina y caídas de agua en las faldas de la cordillera del Tunari.</Descripcion>
+        <Horario_Apertura>07:00</Horario_Apertura>
+        <Horario_Cierra>16:30</Horario_Cierra>
+        <Nombre>Pozas de Chilimarca</Nombre>
+        <Ubicacion>Tiquipaya</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pukara_de_Tupuraya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Pukara_de_Tupuraya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Prehispánica</Cultura_Origen>
+        <Estado_Conservacion>Regular</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Pukara de Tupuraya</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Qollqas_de_Cotapachi_Quillacollo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Qollqas_de_Cotapachi_Quillacollo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Inca</Cultura_Origen>
+        <Estado_Conservacion>Bueno</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Qollqas de Cotapachi (Quillacollo)</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Qollqas_de_Tarata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Qollqas_de_Tarata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Inca</Cultura_Origen>
+        <Estado_Conservacion>Bueno</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Qollqas de Tarata</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Radio_Taxi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</Costo_Aproximado>
+        <Horario_Servicio>24 Horas</Horario_Servicio>
+        <Ruta>Puerta a Puerta (Variable)</Ruta>
+        <Tipo_Transporte>Radio Taxi (App)</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Restaurante_Tunari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Restaurante_Tunari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Establecimiento_Gastronomico"/>
+        <Horario_Atencion>11:30 - 15:00</Horario_Atencion>
+        <Servicios>Salón de eventos</Servicios>
+        <Tipo_Establecimiento>Comida Nacional</Tipo_Establecimiento>
+        <Ubicacion>Calle Ballivián</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Incallajta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Incallajta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Interdepartamental"/>
+        <seLlegaPor rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Bus_Turístico_-City_Tour"/>
+        <Cultura_Origen>Inca</Cultura_Origen>
+        <Estado_Conservacion>Bueno</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nivel_Concurrencia>Bajo</Nivel_Concurrencia>
+        <Nombre>Ruinas de Incallajta</Nombre>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Tiene_Descuento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Pocona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Pocona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Inca/preincaico</Cultura_Origen>
+        <Estado_Conservacion>Regular</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Ruinas de Pocona</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Tapacarí -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Tapacarí">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Preincaico</Cultura_Origen>
+        <Estado_Conservacion>Regular</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Ruinas de Tapacarí</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Totora -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Ruinas_de_Totora">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Prehispánica</Cultura_Origen>
+        <Estado_Conservacion>Regular</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Ruinas de Totora</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Río_Rocha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Río_Rocha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Actividades>Caminata, observación</Actividades>
+        <Grado_Dificultad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Grado_Dificultad>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Río Rocha</Nombre>
+        <Tipo_Ecosistema>Río</Tipo_Ecosistema>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#San_Pedro_de_Arani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#San_Pedro_de_Arani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <tieneAtractivo rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Catedral_Metropolitana"/>
+        <Descripcion>Iglesia colonial conocida como &quot;La Catedral del Pan&quot;, famosa por su arquitectura y los hornos de pan artesanales cercanos.</Descripcion>
+        <Horario_Apertura>09:00</Horario_Apertura>
+        <Horario_Cierra>18:00</Horario_Cierra>
+        <Nombre>San Pedro de Arani</Nombre>
+        <Ubicacion>Arani</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Sendero_de_los_Jichis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Sendero_de_los_Jichis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <Descripcion>Una ruta de senderismo poco señalizada que atraviesa bosques de queñuas (árboles nativos) en las alturas de la ciudad.</Descripcion>
+        <Horario_Apertura>06:00</Horario_Apertura>
+        <Horario_Cierra>17:00</Horario_Cierra>
+        <Nombre>Sendero de los Jichis</Nombre>
+        <Ubicacion>Parque Tunari</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Serrania_e_Cota -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Serrania_e_Cota">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Natural"/>
+        <tieneAtractivo rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Qollqas_de_Cotapachi_Quillacollo"/>
+        <Descripcion>Serranía rocosa ubicada en Quillacollo con senderos de caminata y vistas panorámicas del valle cochabambino</Descripcion>
+        <Horario_Apertura>08:00</Horario_Apertura>
+        <Horario_Cierra>17:30</Horario_Cierra>
+        <Ubicacion>Quillacollo</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Silpancho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Silpancho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Criolla / Típica</Es_Tipico>
+        <Ingredientes>Arroz, papa, carne de res apanada, huevo, sarsa (tomate y cebolla)</Ingredientes>
+        <Tipo_Producto>Silpancho</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Skatepark_Ollantay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Skatepark_Ollantay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Recreativo"/>
+        <estaCercaDe rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Miraflores_Lugar_de_Piques"/>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Gratuito>
+        <Horario_Especial>08:00 - 21:00</Horario_Especial>
+        <Nombre>Skatepark Ollantay</Nombre>
+        <Tipo_Recreacion>Deportivo / Juvenil</Tipo_Recreacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Sopa_de_Maní -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Sopa_de_Maní">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Criolla / Sopa tradicional</Es_Tipico>
+        <Ingredientes>Maní licuado, carne de res o pollo, fideo macarrón, papa, orégano</Ingredientes>
+        <Tipo_Producto>Sopa de maní</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Taxi_Trufi_Línea_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Taxi_Trufi_Línea_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</Costo_Aproximado>
+        <Horario_Servicio>05:00 - 22:00</Horario_Servicio>
+        <Ruta>Av. Blanco Galindo - Centro</Ruta>
+        <Tipo_Transporte>Taxi Trufi (Línea 3)</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Teatro_Achá -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Teatro_Achá">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Colonial</Epoca>
+        <Nivel_Concurrencia>Bajo</Nivel_Concurrencia>
+        <Nombre>Teatro Achá</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tiene_Descuento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Tiene_Descuento>
+        <Tipo_Patrimonio>Edificación Civil</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Teleférico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Teleférico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</Costo_Aproximado>
+        <Horario_Servicio>10:00 - 19:00</Horario_Servicio>
+        <Ruta>Parque de la Familia - Cristo</Ruta>
+        <Tipo_Transporte>Teleférico</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Templo_de_la_Merced -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Templo_de_la_Merced">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Cultural_Histórico"/>
+        <Epoca>Colonial</Epoca>
+        <Nombre>Templo de la Merced</Nombre>
+        <Patrimonio_Nacional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Patrimonio_Nacional>
+        <Tipo_Patrimonio>Arquitectura Religiosa</Tipo_Patrimonio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Todos_Santos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Todos_Santos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>02 de Noviembre</Fecha_Fin>
+        <Fecha_Inicio>01 de Noviembre</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Tradicional / Religioso</Tipo_Evento>
+        <Ubicacion>Cementerios locales</Ubicacion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Trancapecho -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Trancapecho">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Producto_Alimenticio"/>
+        <Es_Tipico>Comida Rápida / Típica</Es_Tipico>
+        <Ingredientes>Pan de batalla, carne apanada, arroz, papa, huevo, sarsa</Ingredientes>
+        <Tipo_Producto>Trancapecho</Tipo_Producto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transfer_Aeropuerto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transfer_Aeropuerto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.0</Costo_Aproximado>
+        <Horario_Servicio>Según vuelos</Horario_Servicio>
+        <Ruta>Jorge Wilstermann - Hoteles</Ruta>
+        <Tipo_Transporte>Transfer Aeropuerto</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tren_Metropolitano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Tren_Metropolitano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Transporte"/>
+        <Capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</Capacidad>
+        <Costo_Aproximado rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</Costo_Aproximado>
+        <Horario_Servicio>06:30 - 20:00</Horario_Servicio>
+        <Ruta>Estación Central - Quillacollo</Ruta>
+        <Tipo_Transporte>Tren Metropolitano</Tipo_Transporte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Vestigios_Arqueológicos_de_Mizque -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Vestigios_Arqueológicos_de_Mizque">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Atractivo_Arqueológico"/>
+        <Cultura_Origen>Prehispánica</Cultura_Origen>
+        <Estado_Conservacion>Regular</Estado_Conservacion>
+        <Gratuito rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Gratuito>
+        <Nombre>Vestigios Arqueológicos de Mizque</Nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Virgen_de_Urkupiña -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Virgen_de_Urkupiña">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#Evento_Turístico"/>
+        <Fecha_Fin>16 de Agosto</Fecha_Fin>
+        <Fecha_Inicio>14 de Agosto</Fecha_Inicio>
+        <Frecuencia>Anual</Frecuencia>
+        <Tipo_Evento>Religioso / Folclórico</Tipo_Evento>
+        <Ubicacion>Quillacollo</Ubicacion>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

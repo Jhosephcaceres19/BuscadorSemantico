@@ -8,13 +8,19 @@
     "dev": "node src/server.js",
     "start": "node src/server.js"
   },
-  "keywords": ["rdf", "turtle", "semantic-web", "turismo"],
+  "keywords": [
+    "rdf",
+    "turtle",
+    "semantic-web",
+    "turismo"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "n3": "^2.0.3"
+    "n3": "^2.0.3",
+    "rdflib": "^2.3.8"
   }
 }

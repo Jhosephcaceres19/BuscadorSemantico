@@ -1,4 +1,6 @@
 // backend/src/server.js
+// Servidor Express con respuestas en OWL/RDF-XML
+
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -7,72 +9,53 @@ const ontology = require("./ontology");
 const app = express();
 const PORT = 3000;
 
-// ── Middlewares ──────────────────────────────────────────
+// Middlewares
 app.use(cors());
 
-// IMPORTANTE: No usar express.json() - Solo aceptamos Turtle
-// Middleware para asegurar respuestas Turtle
-app.use((req, res, next) => {
-  // Solo para rutas que no son archivos estáticos
-  if (!req.path.includes('.') && req.path !== '/') {
-    res.setHeader('Content-Type', 'text/turtle; charset=utf-8');
-  }
-  next();
-});
-
-// ── Servir archivos estáticos ────────────────────────────
-// Opción 1: Ruta absoluta (más confiable)
+// Servir archivos estáticos del frontend
 const frontendPath = path.join(__dirname, "../../frontend");
 console.log(`📁 Sirviendo estáticos desde: ${frontendPath}`);
-
 app.use(express.static(frontendPath));
 
-// Opción 2: Redirigir raíz a index.html explícitamente
+// Ruta raíz
 app.get("/", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
-// ── GET /api/search?q=<término> ──────────────────────────
+// API de búsqueda - Respuesta en OWL/RDF-XML
 app.get("/api/search", (req, res) => {
   const q = (req.query.q || "").trim();
 
-  console.log(`🔍 Término de búsqueda recibido: "${req.query.q}"`);
+  console.log(`🔍 Término de búsqueda recibido: "${q}"`);
 
+  // Error: término vacío
   if (!q) {
-    res.setHeader('Content-Type', 'text/turtle; charset=utf-8');
-    return res.status(400).send(`
-@prefix : <http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
-:error rdf:type :Error ;
-    :mensaje "El parámetro 'q' es requerido." .
-`);
+    res.setHeader('Content-Type', 'application/rdf+xml; charset=utf-8');
+    return res.status(400).send(`<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns="http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#">
+  <owl:NamedIndividual rdf:about="#Error">
+    <rdf:type rdf:resource="#Error"/>
+    <mensaje>El parámetro 'q' es requerido.</mensaje>
+  </owl:NamedIndividual>
+</rdf:RDF>`);
   }
 
   // Ejecutar búsqueda semántica
   const resultados = ontology.buscar(q);
 
-  // Serializar resultados a Turtle
-  const turtleResponse = ontology.serializarATurtle(resultados);
+  // Serializar resultados a OWL/RDF-XML
+  const owlResponse = ontology.serializarAOWL(resultados, q);
   
-  // Agregar metadatos de la consulta
-  const turtleConMetadata = `
-@prefix : <http://www.semanticweb.org/sarzuri/ontologies/2026/2/turismo-cochabamba#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-:consulta rdf:type :ResultadoConsulta ;
-    :terminoBusqueda "${q}" ;
-    :totalResultados "${resultados.length}"^^xsd:integer .
-
-${turtleResponse}`;
-
-  res.setHeader('Content-Type', 'text/turtle; charset=utf-8');
-  res.status(200).send(turtleConMetadata);
+  res.setHeader('Content-Type', 'application/rdf+xml; charset=utf-8');
+  res.status(200).send(owlResponse);
 });
 
+// Iniciar servidor
 app.listen(PORT, () => {
   console.log(`✅ Servidor semántico corriendo en http://localhost:${PORT}`);
-  console.log(`📡 Respuestas en formato Turtle (text/turtle)`);
+  console.log(`📖 Ontología fuente: OWL/RDF-XML (TurismoLocal.owl)`);
+  console.log(`📡 Formato de respuesta: OWL/RDF-XML (application/rdf+xml)`);
   console.log(`🌐 Frontend disponible en http://localhost:${PORT}`);
 });
