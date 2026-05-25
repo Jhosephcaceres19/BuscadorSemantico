@@ -1,6 +1,5 @@
 // backend/src/ontology.js
 // Motor semántico con rdflib.js - Soporta OWL/RDF-XML
-// Lee ontología OWL y responde consultas SPARQL-like
 
 const fs = require("fs");
 const path = require("path");
@@ -14,8 +13,6 @@ const XSD = "http://www.w3.org/2001/XMLSchema#";
 
 let store = null;
 let loaded = false;
-
-const NamedNode = $rdf.NamedNode;
 
 // ── Cargar ontología OWL ─────────────────────────────────
 function cargarOntologia() {
@@ -74,12 +71,12 @@ function buscar(q) {
 
   const resultados = [];
 
+  // Crear nodos correctamente con 'new'
+  const rdfType = new $rdf.NamedNode(RDF + "type");
+  const owlNamedIndividual = new $rdf.NamedNode(OWL + "NamedIndividual");
+
   // Obtener todos los individuos
-  const individuos = store.statementsMatching(
-    null,
-    NamedNode(RDF + "type"),
-    NamedNode(OWL + "NamedIndividual")
-  );
+  const individuos = store.statementsMatching(null, rdfType, owlNamedIndividual);
 
   for (const st of individuos) {
     const individuo = st.subject;
