@@ -5,131 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Turismo Cochabamba — Buscador Semántico</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   </head>
   <body>
-    <!-- Fondo decorativo -->
     <div class="bg-orb bg-orb--1"></div>
     <div class="bg-orb bg-orb--2"></div>
     <div class="bg-grain"></div>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <span class="header-badge">Web Semántica · Grupo 21 · UMSS</span>
-      </div>
-    </header>
+    <main>
 
-    <main class="hero">
-      <div class="hero-content">
-        <div class="hero-label">Metabuscador Semántico</div>
-        <h1 class="hero-title">
-          Descubre<br />
-          <em>Cochabamba</em>
-        </h1>
-        <p class="hero-sub">
+      <!-- TÍTULO PRINCIPAL - ESTILO GRUESO -->
+      <div class="title-section">
+        <h1 class="main-title heavy-title">COCHABAMBA</h1>
+        <h2 class="sub-title heavy-sub">TURISMO</h2>
+      </div>
+
+      <!-- CARRUSEL PANORÁMICO -->
+      <div class="carousel-section">
+        <div class="carousel-wrap">
+          <div class="carousel-track" id="track">
+            <div class="carousel-slide">
+              <img src="../images/cristo-de-la-concordia-1.jpg" alt="Cristo de la Concordia"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Cristo_de_la_Concordia_Cochabamba.jpg/1200px-Cristo_de_la_Concordia_Cochabamba.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Cristo de la Concordia</div>
+                <div class="slide-sub">El monumento más alto del mundo · Cerro San Pedro</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/tunari.jpg" alt="Parque Nacional Tunari"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Parque_Nacional_Torotoro_Bolivia.jpg/1280px-Parque_Nacional_Torotoro_Bolivia.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Parque Nacional Tunari</div>
+                <div class="slide-sub">Reserva natural en las alturas de Cochabamba</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/parque-nacional-torotoro.jpg" alt="Parque Nacional Torotoro"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Parque_Nacional_Torotoro_Bolivia.jpg/1280px-Parque_Nacional_Torotoro_Bolivia.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Parque Nacional Torotoro</div>
+                <div class="slide-sub">Cañones, cavernas y huellas de dinosaurios</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/parque-cretacico-sacaba.jpg" alt="Parque Cretácico Sacaba"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Cochabamba_Plaza_14_de_Septiembre.jpg/1280px-Cochabamba_Plaza_14_de_Septiembre.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Parque Cretácico Sacaba</div>
+                <div class="slide-sub">Huellas de dinosaurios · Patrimonio paleontológico</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/laguna-alalay.jpg" alt="Laguna Alalay"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Laguna_Alalay.JPG/1280px-Laguna_Alalay.JPG'">
+              <div class="slide-overlay">
+                <div class="slide-title">Laguna Alalay</div>
+                <div class="slide-sub">Espejo de agua en el corazón de la ciudad</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/Incachaca.jpg" alt="Incachaca"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Incachaca_Bolivia.jpg/1280px-Incachaca_Bolivia.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Incachaca</div>
+                <div class="slide-sub">Cascadas y bosque de niebla · Chapare</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/Corani.jpg" alt="Corani"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Villa_Tunari_Bolivia.jpg/1280px-Villa_Tunari_Bolivia.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Corani</div>
+                <div class="slide-sub">Embalse y paisajes andinos de ensueño</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/colomi.jpg" alt="Colomi"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Quillacollo_Bolivia.jpg/1280px-Quillacollo_Bolivia.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Colomi</div>
+                <div class="slide-sub">Valles y neblina · Puerta al Chapare</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="../images/pique-a-lo-macho.jpg" alt="Pique a lo Macho"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mercado_La_Cancha_Cochabamba.jpg/1280px-Mercado_La_Cancha_Cochabamba.jpg'">
+              <div class="slide-overlay">
+                <div class="slide-title">Pique a lo Macho</div>
+                <div class="slide-sub">Gastronomía cochabambina · Sabor auténtico</div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn btn-prev" id="prev" aria-label="Anterior">&#8592;</button>
+          <button class="carousel-btn btn-next" id="next" aria-label="Siguiente">&#8594;</button>
+        </div>
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <!-- DESCRIPCIÓN -->
+      <div class="description-section">
+        <p class="description-text">
           Consulta nuestra ontología OWL de turismo local y encuentra
           atractivos, servicios, gastronomía y más.
         </p>
+      </div>
 
-        <!-- Barra de búsqueda (Task #5) -->
+      <!-- BUSCADOR -->
+      <div class="search-section">
         <div class="search-wrapper">
-          <div class="search-bar">
-            <span class="search-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-            </span>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Ej: museos gratuitos, hoteles, senderismo…"
-              autocomplete="off"
-              spellcheck="false"
-            />
-            <button id="searchBtn" class="btn-search">Buscar</button>
+          <div class="search-bar-wrapper">
+            <div class="search-bar">
+              <span class="search-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.35-4.35"/>
+                </svg>
+              </span>
+              <input type="text" id="searchInput"
+                placeholder="Ej: museos, parques, hospedaje, lugares gratuitos…"
+                autocomplete="off" spellcheck="false"/>
+              <button id="searchBtn" class="btn-search">Buscar</button>
+            </div>
+            <ul id="suggestBox" class="suggest-box" style="display:none"></ul>
           </div>
 
-          <!-- Chips de búsqueda rápida -->
+          <!-- CHIPS - 6 CATEGORÍAS -->
           <div class="quick-chips">
-            <button class="chip" data-query="natural">🌿 Naturales</button>
-            <button
-              class="chip"
-              data-query="¿Qué museos hay en
-Cochabamba?"
-            >
-              🏛️ ¿Qué museos hay en Cochabamba?
+            <button class="chip" data-query="museos">
+              <span class="chip-icon">🏛️</span>
+              <span class="chip-text">Museos</span>
+              <span class="chip-text-en">Museums</span>
             </button>
-            <button
-              class="chip"
-              data-query="What typical dishes can be  tasted?"
-            >
-              🍲 What typical dishes can be tasted?
+            <button class="chip" data-query="hospedaje">
+              <span class="chip-icon">🛏️</span>
+              <span class="chip-text">Hospedaje</span>
+              <span class="chip-text-en">Hotels</span>
             </button>
-            <button class="chip" data-query="hospedaje">🛏️ Hospedaje</button>
-            <button
-              class="chip"
-              data-query="¿Qué ferias artesanales se realizan en la región?"
-            >
-              🎉 ¿Qué ferias artesanales se realizan en la región?
+            <button class="chip" data-query="parques">
+              <span class="chip-icon">🌳</span>
+              <span class="chip-text">Parques</span>
+              <span class="chip-text-en">Parks</span>
+            </button>
+            <button class="chip" data-query="naturales">
+              <span class="chip-icon">🌿</span>
+              <span class="chip-text">Naturales</span>
+              <span class="chip-text-en">Nature</span>
+            </button>
+            <button class="chip" data-query="ferias">
+              <span class="chip-icon">🎉</span>
+              <span class="chip-text">Ferias</span>
+              <span class="chip-text-en">Fairs</span>
+            </button>
+            <button class="chip" data-query="transporte">
+              <span class="chip-icon">🚌</span>
+              <span class="chip-text">Transporte</span>
+              <span class="chip-text-en">Transport</span>
             </button>
           </div>
         </div>
-
-        <!-- Selector de idioma (multilingualidad semántica) -->
-        <div class="lang-selector">
-          <span class="lang-label">Idioma:</span>
-          <button class="lang-btn active" data-lang="es">ES</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-        </div>
       </div>
 
-      <!-- Estadísticas de la ontología -->
-      <div class="stats-strip">
-        <div class="stat">
-          <span class="stat-num">120+</span>
-          <span class="stat-label">Instancias</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">11</span>
-          <span class="stat-label">Clases OWL</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">40</span>
-          <span class="stat-label">Consultas DL</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Idiomas</span>
-        </div>
-      </div>
     </main>
 
-    <!-- Contenedor de resultados (Task #5) -->
     <section class="results-section">
       <div id="resultados" class="results-grid"></div>
     </section>
 
-    <!-- Estado vacío (visible por defecto) -->
     <div class="empty-state" id="emptyState">
       <div class="empty-icon">◈</div>
       <p>Ingresa un término para explorar la ontología</p>
+      <p class="empty-sub">Enter a term to explore the ontology</p>
     </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-stats">
+          <span class="footer-stat">🏛️ 128 INSTANCIAS</span>
+          <span class="footer-stat-divider">|</span>
+          <span class="footer-stat">📚 14 CLASES OWL</span>
+          <span class="footer-stat-divider">|</span>
+          <span class="footer-stat">🌐 2 IDIOMAS</span>
+        </div>
+        <div class="footer-badges">
+          <span class="footer-badge">WEB SEMÁNTICA · GRUPO 21 · UMSS</span>
+          <span class="footer-badge footer-badge-light">METABUSCADOR SEMÁNTICO</span>
+        </div>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
