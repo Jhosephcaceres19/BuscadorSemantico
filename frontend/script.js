@@ -153,10 +153,71 @@ function parseOWLToJSON(owlText) {
 }
 
 // ============================================
+// PREGUNTAS OFICIALES (ES + EN) → clave de búsqueda
+// ============================================
+function normalizarPregunta(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[¿?¡!.,;:'"]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const PREGUNTAS_OFICIALES = [
+  // Español
+  { firma: "que lugares son gratuitos", clave: "true" },
+  { firma: "que museos hay en cochabamba", clave: "museo" },
+  { firma: "que hoteles estan disponibles", clave: "hospedaje" },
+  { firma: "que restaurantes hay", clave: "restaurante" },
+  { firma: "que platos tipicos se pueden degustar", clave: "producto alimenticio" },
+  { firma: "cuales son los principales parques turisticos de la ciudad", clave: "parque" },
+  { firma: "que lugares turisticos cuentan con accesibilidad para sillas de ruedas", clave: "accesible" },
+  { firma: "que festividades locales se celebran cada ano", clave: "evento" },
+  { firma: "que medios de transporte llegan a los destinos turisticos", clave: "transporte" },
+  { firma: "que iglesias turisticas se pueden visitar", clave: "iglesia" },
+  { firma: "que rutas de senderismo existen en la region", clave: "senderismo" },
+  { firma: "que lugares turisticos son recomendados para familias", clave: "familia" },
+  { firma: "que atractivos turisticos de tipo mirador o ubicados en cerros existen", clave: "mirador" },
+  { firma: "que ferias artesanales se realizan en la region", clave: "feria artesanal" },
+  { firma: "que monumentos historicos son considerados puntos de interes", clave: "monumento" },
+  { firma: "que parques hay en cochabamba", clave: "parque" },
+  { firma: "que atractivos naturales existen", clave: "natural" },
+  // Inglés
+  { firma: "what places are free", clave: "true" },
+  { firma: "what museums are in cochabamba", clave: "museo" },
+  { firma: "what hotels are available", clave: "hospedaje" },
+  { firma: "what restaurants are there", clave: "restaurante" },
+  { firma: "what typical dishes can i try", clave: "producto alimenticio" },
+  { firma: "what are the main tourist parks", clave: "parque" },
+  { firma: "what tourist places have wheelchair accessibility", clave: "accesible" },
+  { firma: "what local festivals are celebrated each year", clave: "evento" },
+  { firma: "what means of transport reach tourist destinations", clave: "transporte" },
+  { firma: "what tourist churches can i visit", clave: "iglesia" },
+  { firma: "what hiking trails exist in the region", clave: "senderismo" },
+  { firma: "what tourist places are recommended for families", clave: "familia" },
+  { firma: "what viewpoints or hill attractions exist", clave: "mirador" },
+  { firma: "what craft fairs are held in the region", clave: "feria artesanal" },
+  { firma: "what historical monuments are points of interest", clave: "monumento" },
+  { firma: "what parks are in cochabamba", clave: "parque" },
+  { firma: "what natural attractions exist", clave: "natural" },
+];
+
+// ============================================
 // TRADUCTOR DE PREGUNTAS - VERSIÓN DEFINITIVA CON BOOLEANOS
 // ============================================
 function traducirPregunta(texto) {
-  const t = texto.toLowerCase().trim();
+  const t = normalizarPregunta(texto);
+  if (!t) return texto;
+
+  // Coincidencia exacta o pregunta que contiene la firma oficial
+  for (const { firma, clave } of PREGUNTAS_OFICIALES) {
+    if (t === firma || t.includes(firma)) {
+      console.log(`🔍 Pregunta oficial: "${texto}" → "${clave}"`);
+      return clave;
+    }
+  }
   
   // ========================================
   // BOOLEANOS ESPECÍFICOS (prioridad alta)
@@ -194,9 +255,15 @@ function traducirPregunta(texto) {
     return "accesible";
   }
   
+  // Monumentos históricos (antes que patrimonio; evita confundir "puntos de interés")
+  if (t.includes("monumentos historicos") || t.includes("historical monuments")) {
+    console.log(`🔍 Buscando monumentos → "monumento"`);
+    return "monumento";
+  }
+
   // Boolean: Patrimonio Nacional
-  if (t.includes("patrimonio nacional") || t.includes("monumento nacional") || 
-      t.includes("patrimonio histórico") || t.includes("puntos de interés")) {
+  if (t.includes("patrimonio nacional") || t.includes("monumento nacional") ||
+      t.includes("patrimonio historico")) {
     console.log(`🔍 Buscando patrimonio nacional → "patrimonio_nacional"`);
     return "patrimonio_nacional";
   }
@@ -242,13 +309,19 @@ function traducirPregunta(texto) {
   }
   
   // Familias
-  if (t.includes("recomendado para familias") || t.includes("para familias") || 
-      t.includes("con niños pequeños")) {
-    return "recreativo";
+  if (t.includes("recomendado para familias") || t.includes("para familias") ||
+      t.includes("recommended for families") || t.includes("con ninos pequenos")) {
+    return "familia";
   }
-  
-  // Restaurantes cerca
-  if (t.includes("restaurantes existen cerca") || t.includes("restaurantes cerca")) {
+
+  // Hoteles / hospedaje
+  if (t.includes("hoteles") || t.includes("hotel") || t.includes("hospedaje") ||
+      t.includes("alojamiento") || t.includes("hotels are available")) {
+    return "hospedaje";
+  }
+
+  // Restaurantes
+  if (t.includes("restaurante") || t.includes("restaurants are there")) {
     return "restaurante";
   }
   
@@ -263,9 +336,14 @@ function traducirPregunta(texto) {
     return "laguna";
   }
   
+  // Atractivos naturales
+  if (t.includes("atractivos naturales") || t.includes("natural attractions exist")) {
+    return "natural";
+  }
+
   // Museos
-  if (t.includes("museos existen") || t.includes("museos en la región") || 
-      (t.includes("museo") && !t.includes("arqueológico"))) {
+  if (t.includes("museos") || t.includes("museums are in") ||
+      (t.includes("museo") && !t.includes("arqueologico"))) {
     return "museo";
   }
   
@@ -301,11 +379,6 @@ function traducirPregunta(texto) {
   // Primeros auxilios
   if (t.includes("primeros auxilios") || t.includes("asistencia médica")) {
     return "natural";
-  }
-  
-  // Monumentos históricos
-  if (t.includes("monumentos históricos")) {
-    return "monumento";
   }
   
   // Pet-friendly
@@ -468,18 +541,11 @@ async function doSearch() {
     console.log(`✅ "${terminoBusqueda}" → ${resultados.length} resultados`);
 
     if (resultados.length === 0) {
-      console.log(`⚠️ Sin resultados para "${terminoBusqueda}", mostrando atractivos naturales`);
-      const fallbackResponse = await fetch(`${BASE_URL}?q=natural`, {
-        headers: { 'Accept': 'application/rdf+xml' }
-      });
-      const fallbackText = await fallbackResponse.text();
-      const resultadosFallback = parseOWLToJSON(fallbackText);
-      
-      resultsContainer.innerHTML = resultadosFallback.map(item => renderCard(item, t)).join('');
-      resultsContainer.querySelectorAll('.result-card').forEach((card, i) => {
-        card.style.animationDelay = `${i * 60}ms`;
-        card.classList.add('card-enter');
-      });
+      resultsContainer.innerHTML = `
+        <div class="no-results">
+          <p>${t.noResults} «${escapeHtml(q)}»</p>
+          <p>${t.try}</p>
+        </div>`;
       return;
     }
 
@@ -533,5 +599,5 @@ input.placeholder = t0.placeholder;
 btn.textContent = t0.search;
 
 console.log("✅ Buscador semántico OWL listo");
-console.log("📝 Preguntas soportadas: gratuitos, descuentos, reservas, accesibilidad, patrimonio, museos, hoteles, restaurantes, platos típicos, parques, iglesias, eventos, transporte");
+console.log(`📝 Preguntas oficiales soportadas: ${PREGUNTAS_OFICIALES.length} (ES + EN)`);
 console.log("🔗 Formato: OWL → procesado en frontend sin JSON");

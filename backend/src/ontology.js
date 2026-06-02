@@ -334,11 +334,117 @@ function buscar(q) {
   }
 
   // ========================================
-  // CASO 8: BÚSQUEDA POR CLASE ESPECÍFICA
+  // CASO 8: RUTAS DE SENDERISMO
+  // ========================================
+  if (termino === "senderismo" || termino === "hiking" || termino === "trekking") {
+    const individuos = store.statementsMatching(
+      null,
+      new $rdf.NamedNode(RDF + "type"),
+      new $rdf.NamedNode(OWL + "NamedIndividual")
+    );
+
+    for (const st of individuos) {
+      const individuo = st.subject;
+      const props = obtenerPropiedades(individuo);
+      const actividades = (props[BASE + "Actividades"] || "").toLowerCase();
+      const descripcion = (props[BASE + "Descripcion"] || "").toLowerCase();
+      const nombre = (props[BASE + "Nombre"] || "").toLowerCase();
+
+      if (
+        actividades.includes("senderismo") ||
+        actividades.includes("trekking") ||
+        actividades.includes("caminata") ||
+        descripcion.includes("senderismo") ||
+        descripcion.includes("sendero") ||
+        nombre.includes("sendero")
+      ) {
+        resultados.push({ id: individuo.value, propiedades: props });
+      }
+    }
+
+    console.log(`🔍 Rutas de senderismo: ${resultados.length} resultados`);
+    return resultados.map(ent => normalizarEntidad(ent.id, ent.propiedades));
+  }
+
+  // ========================================
+  // CASO 9: LUGARES RECOMENDADOS PARA FAMILIAS
+  // ========================================
+  if (termino === "familia" || termino === "familiar" || termino === "familias") {
+    const individuos = store.statementsMatching(
+      null,
+      new $rdf.NamedNode(RDF + "type"),
+      new $rdf.NamedNode(OWL + "NamedIndividual")
+    );
+
+    for (const st of individuos) {
+      const individuo = st.subject;
+      const props = obtenerPropiedades(individuo);
+      const tipoRec = (props[BASE + "Tipo_Recreacion"] || "").toLowerCase();
+      const tipoEst = (props[BASE + "Tipo_Establecimiento"] || "").toLowerCase();
+      const nombre = (props[BASE + "Nombre"] || "").toLowerCase();
+      const descripcion = (props[BASE + "Descripcion"] || "").toLowerCase();
+
+      if (
+        tipoRec.includes("familiar") ||
+        tipoEst.includes("familiar") ||
+        nombre.includes("familia") ||
+        descripcion.includes("familia") ||
+        descripcion.includes("niños") ||
+        descripcion.includes("ninos")
+      ) {
+        resultados.push({ id: individuo.value, propiedades: props });
+      }
+    }
+
+    console.log(`🔍 Lugares para familias: ${resultados.length} resultados`);
+    return resultados.map(ent => normalizarEntidad(ent.id, ent.propiedades));
+  }
+
+  // ========================================
+  // CASO 10: MIRADORES Y ATRACTIVOS EN CERROS
+  // ========================================
+  if (termino === "mirador" || termino === "viewpoint") {
+    const individuos = store.statementsMatching(
+      null,
+      new $rdf.NamedNode(RDF + "type"),
+      new $rdf.NamedNode(OWL + "NamedIndividual")
+    );
+
+    for (const st of individuos) {
+      const individuo = st.subject;
+      const props = obtenerPropiedades(individuo);
+      const tipoRec = (props[BASE + "Tipo_Recreacion"] || "").toLowerCase();
+      const tipoEco = (props[BASE + "Tipo_Ecosistema"] || "").toLowerCase();
+      const tipoAtr = (props[BASE + "Tipo_Atractivo"] || "").toLowerCase();
+      const nombre = (props[BASE + "Nombre"] || "").toLowerCase();
+      const descripcion = (props[BASE + "Descripcion"] || "").toLowerCase();
+
+      if (
+        tipoRec.includes("mirador") ||
+        tipoEco.includes("cerro") ||
+        tipoAtr.includes("mirador") ||
+        nombre.includes("mirador") ||
+        nombre.includes("cerro") ||
+        descripcion.includes("mirador") ||
+        descripcion.includes("cerro") ||
+        descripcion.includes("vista panor")
+      ) {
+        resultados.push({ id: individuo.value, propiedades: props });
+      }
+    }
+
+    console.log(`🔍 Miradores y cerros: ${resultados.length} resultados`);
+    return resultados.map(ent => normalizarEntidad(ent.id, ent.propiedades));
+  }
+
+  // ========================================
+  // CASO 11: BÚSQUEDA POR CLASE ESPECÍFICA
   // ========================================
   const clasesMap = {
     "museo": "Atractivo_Cultural_Histórico",
     "hospedaje": "Hospedaje",
+    "hotel": "Hospedaje",
+    "hoteles": "Hospedaje",
     "evento": "Evento_Turístico",
     "natural": "Atractivo_Natural",
     "recreativo": "Atractivo_Recreativo",
@@ -386,10 +492,14 @@ function buscar(q) {
           });
         }
       }
-      // Filtro para miradores
-      else if (termino === "mirador") {
-        const tipo = props[BASE + "Tipo_Recreacion"] || "";
-        if (tipo.toLowerCase().includes("mirador")) {
+      // Filtro para museos
+      else if (termino === "museo") {
+        const tipoPatrimonio = props[BASE + "Tipo_Patrimonio"] || "";
+        const nombre = props[BASE + "Nombre"] || "";
+        if (
+          tipoPatrimonio.toLowerCase().includes("museo") ||
+          nombre.toLowerCase().includes("museo")
+        ) {
           resultados.push({
             id: individuo.value,
             propiedades: props
