@@ -7,20 +7,25 @@ const path = require("path");
 const ontology = require("./ontology");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: "https://tu_frontend_vercel"
+}));
 
-// Servir archivos estáticos del frontend
-const frontendPath = path.join(__dirname, "../../frontend");
-console.log(`📁 Sirviendo estáticos desde: ${frontendPath}`);
-app.use(express.static(frontendPath));
+// // Servir archivos estáticos del frontend
+// const frontendPath = path.join(__dirname, "../../frontend");
+// console.log(`📁 Sirviendo estáticos desde: ${frontendPath}`);
+// app.use(express.static(frontendPath));
 
-// Ruta raíz
-app.get("/", (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
-});
+// // Ruta raíz
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(frontendPath, "index.html"));
+// });
+app.get("/",(req, res) =>{
+  res.send("API corriendo")
+})
 
 // API de búsqueda - Respuesta en OWL/RDF-XML
 app.get("/api/search", (req, res) => {
