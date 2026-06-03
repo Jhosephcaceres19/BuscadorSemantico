@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(cors({
-  origin: "https://tu_frontend_vercel"
+  origin: "https://buscador-semantico.vercel.app/"
 }));
 
 // // Servir archivos estáticos del frontend
