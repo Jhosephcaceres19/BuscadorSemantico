@@ -29,7 +29,7 @@ function cargarOntologia() {
   store = $rdf.graph();
 
   try {
-    $rdf.parse(contenido, store, owlPath, "application/rdf+xml");
+    $rdf.parse(contenido, store, "http://localhost:3000/ontology", "application/rdf+xml");
     console.log(`✅ Grafo RDF cargado: ${store.statements.length} triples desde TurismoLocal.owl (RDF/XML OWL)`);
   } catch (err) {
     console.error("❌ Error al parsear RDF/XML:", err.message);
