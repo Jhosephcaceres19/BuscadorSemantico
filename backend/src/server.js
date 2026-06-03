@@ -25,7 +25,7 @@ app.use(cors({
 //   res.sendFile(path.join(frontendPath, "index.html"));
 // });
 app.get("/",(req, res) =>{
-  res.send("API corriendo en render")
+  res.send("API corriendo en render1")
 })
 
 // ─── API: Búsqueda semántica → OWL/RDF-XML ───────────────────────────────────
