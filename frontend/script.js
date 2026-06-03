@@ -2,7 +2,7 @@
 // Buscador Semántico - Turismo Cochabamba
 // Procesa respuestas OWL/RDF-XML del backend
 
-const BASE_URL = "https://buscadorsemantico.onrender.com/";
+const BASE_URL = "https://buscadorsemantico.onrender.com/api/search";
 
 // Traducciones
 const translations = {
